@@ -1,0 +1,24 @@
+{
+  "branch": "master",
+  "verifyConditions": [
+    "@semantic-release/changelog",
+    "@semantic-release/git",
+    "@semantic-release/npm"
+  ],
+  "plugins": [
+    "@semantic-release/changelog",
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/npm",
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/git", { "message": "chore(release): ${nextRelease.version} [skip ci]" } ]
+  ],
+  "publish": [
+    "@semantic-release/npm",
+    "@semantic-release/github",
+    {
+      "path": "@qiwi/semantic-release-gh-pages-plugin",
+      "msg": "docs: updated docs",
+      "branch": "gh-pages"
+    }
+  ]
+}

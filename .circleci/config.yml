@@ -47,6 +47,32 @@ jobs:
           name: STYLUS lint
           command: yarn stylus:lint
 
+  release:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
+      - run:
+         name: Semantic release
+         command: npx semantic-release --debug || true
+
+  docsBuild:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: Build dist
+          command: yarn docs:build
+      - save_cache:
+          key: *dist_key
+          paths:
+              - docs
+
 workflows:
   version: 2
   build-test-release:
@@ -54,3 +80,12 @@ workflows:
       - install
       - pugLint
       - stylusLint
+      - docsBuild
+      - release:
+          requires:
+            - docsBuild
+          filters:
+            branches:
+              only:
+                - master
+
