@@ -1,6 +1,6 @@
 {
   "name": "kanoe-css",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Just another CSS framework",
   "main": "src/index.js",
   "repository": "git@github.com:kanoe-ui/kanoe-css.git",
@@ -23,8 +23,7 @@
     "dev": "concurrently --kill-others \"yarn stylus:dev\" \"yarn pug:dev\" \"yarn serve\"",
     "semantic-release": "semantic-release"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
