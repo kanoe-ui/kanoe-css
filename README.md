@@ -8,6 +8,12 @@ Just another CSS framework
 
 ## Development
 
+Watch all stylus and pug files, lint, build and run a development server:
+
+```sh
+$ yarn dev
+```
+
 ### CSS / Styles
 
 Styles are builded with [stylus](http://stylus-lang.com/).
