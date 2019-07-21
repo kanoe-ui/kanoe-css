@@ -33,6 +33,13 @@ $ yarn pug:build
 $ yarn pug:watch
 ```
 
+PUG code style rules are enforced by linting, following the rules defined on [puglintrc](.puglintrc)
+
+```sh
+$ pug:lint
+$ pug:lint:watch
+```
+
 ### Git
 
 Commits messages follow the [conventional commit format](https://conventionalcommits.org) and are checked with [commitlint](https://commitlint.js.org/).
