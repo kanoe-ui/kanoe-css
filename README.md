@@ -13,8 +13,15 @@ Just another CSS framework
 Styles are builded with [stylus](http://stylus-lang.com/).
 
 ```sh
-$  yarn stylus:build
-$  yarn stylus:watch
+$ yarn stylus:build
+$ yarn stylus:watch
+```
+
+Stylus code style rules are enforced by linting, following the rules defined on [stylintrc](.stylintrc)
+
+```sh
+$ stylus:lint
+$ stylus:lint:watch
 ```
 
 ### Git

@@ -9,12 +9,19 @@
   "private": false,
   "scripts": {
     "stylus:build": "stylus ./src/*.styl --out ./docs/styles --compress",
-    "stylus:watch": "yarn run stylus:build --watch --sourcemap"
+    "stylus:watch": "yarn run stylus:build --watch --sourcemap",
+    "stylus:lint": "stylint ./src/*.styl --config .stylintrc",
+    "stylus:lint:watch": "yarn run stylus:lint --watch"
+  },
+  "dependencies": {
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "git-cz": "^3.2.1",
+    "stylint-stylish": "^2.0.0",
+    "stylint": "^2.0.0",
+    "stylus": "^0.54.5",
     "yorkie": "^2.0.0"
   },
   "commitlint": {
@@ -24,9 +31,5 @@
   },
   "gitHooks": {
     "commit-msg": "commitlint -E GIT_PARAMS"
-  },
-  "dependencies": {
-    "stylint": "^2.0.0",
-    "stylus": "^0.54.5"
   }
 }
