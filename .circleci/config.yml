@@ -1,0 +1,91 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+
+version: 2
+
+job_defaults: &job_defaults
+  docker:
+    - image: 'circleci/node:10.15.3'
+
+cache_key: &cache_key v1-dependencies-deps-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+dist_key: &dist_key v1-dependencies-dist-{{ .Revision }}
+
+jobs:
+  install:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: Install
+          command: yarn install
+      - save_cache:
+          key: *cache_key
+          paths:
+            - node_modules
+
+  pugLint:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: PUG lint
+          command: yarn pug:lint
+
+  stylusLint:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: STYLUS lint
+          command: yarn stylus:lint
+
+  release:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - restore_cache:
+          key: *dist_key
+      - run:
+         name: Semantic release
+         command: npx semantic-release --debug || true
+
+  docsBuild:
+    <<: *job_defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: *cache_key
+      - run:
+          name: Build dist
+          command: yarn docs:build
+      - save_cache:
+          key: *dist_key
+          paths:
+              - docs
+
+workflows:
+  version: 2
+  build-test-release:
+    jobs:
+      - install
+      - pugLint
+      - stylusLint
+      - docsBuild
+      - release:
+          requires:
+            - docsBuild
+          filters:
+            branches:
+              only:
+                - master
+
