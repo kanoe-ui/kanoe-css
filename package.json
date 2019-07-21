@@ -24,12 +24,11 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@qiwi/semantic-release-gh-pages-plugin": "^1.10.3",
-    "pug": "^2.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@qiwi/semantic-release-gh-pages-plugin": "^1.10.3",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
     "@semantic-release/npm": "^5.1.13",
@@ -39,9 +38,10 @@
     "live-server": "^1.2.1",
     "pug-cli": "^1.0.0-alpha6",
     "pug-lint": "^2.6.0",
+    "pug": "^2.0.4",
     "semantic-release": "^15.13.18",
-    "stylint": "^2.0.0",
     "stylint-stylish": "^2.0.0",
+    "stylint": "^2.0.0",
     "stylus": "^0.54.5",
     "yorkie": "^2.0.0"
   },
