@@ -24,7 +24,8 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@qiwi/semantic-release-gh-pages-plugin": "^1.10.3"
+    "@qiwi/semantic-release-gh-pages-plugin": "^1.10.3",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
