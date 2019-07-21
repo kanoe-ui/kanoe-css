@@ -24,6 +24,15 @@ $ stylus:lint
 $ stylus:lint:watch
 ```
 
+### HTML / Docs
+
+The documentation and examples are writtten using [pug](https://pugjs.org/)
+
+```sh
+$ yarn pug:build
+$ yarn pug:watch
+```
+
 ### Git
 
 Commits messages follow the [conventional commit format](https://conventionalcommits.org) and are checked with [commitlint](https://commitlint.js.org/).
