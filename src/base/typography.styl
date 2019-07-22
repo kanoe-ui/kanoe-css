@@ -20,3 +20,31 @@ body
     for $size, $index in $font_sizes
       &--{$size}
         --font-size 'var(--font-size--%s)' % $size
+
+  &_weight
+
+    // Absolute values
+    &--light-xxx, &--thin
+      --font-weight var(--font-weight--light-xxx)
+    &--light-xx, &--extra-light, &--light-extra
+      --font-weight var(--font-weight--light-xx)
+    &--light-x, &--light
+      --font-weight var(--font-weight--light-x)
+    &--regular, &--normal
+      --font-weight var(--font-weight--regular)
+    &--bold-x, &--medium
+      --font-weight var(--font-weight--bold-x)
+    &--bold-xx, &--semi-bold
+      --font-weight var(--font-weight--bold-xx)
+    &--bold-xxx, &--bold
+      --font-weight var(--font-weight--bold-xxx)
+    &--bold-xxxx, &--extra-bold
+      --font-weight var(--font-weight--bold-xxxx)
+    &--bold-xxxx, &--black
+      --font-weight var(--font-weight--bold-xxxx)
+
+    // Relative values
+    &--lighter
+      font-weight lighter
+    &--bolder
+      font-weight bolder
