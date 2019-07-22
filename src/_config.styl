@@ -1,0 +1,16 @@
+$vertical_rhythm = 8px
+
+
+$font_sizes = small-xxx, small-xx, small-x, small, regular, large, large-x, large-xx, large-xxx
+$font_weights = light-xxx light-xx light-x regular bold-x bold-xx bold-xxx bold-xxxx bold-xxxxx
+
+:root
+  --font-step .25
+  --vertical-rhythm $vertical_rhythm
+
+
+  for $size, $index in $font_sizes
+    --font-size--{$size} 'calc(var(--vertical-rhythm) * calc(1 + var(--font-step) * %s))' % $index
+
+  for $weight, $index in $font_weights
+    --font-weight--{$weight} 100 * ($index + 1)

@@ -1,0 +1,56 @@
+body
+  font-family 'Noto Sans', sans-serif
+  // font-family var(--font-family--regular)
+  font-size var(--font-size--regular)
+  // line-height calc(var(--vertical-rhythm) * 2)
+
+// Font size
+[class*='font_size']
+  --font-size var(--font-size--regular)
+  font-size var(--font-size)
+
+// Font weight
+[class*='font_weight']
+  font-weight var(--font-weight)
+
+.font
+
+  &_size
+
+    for $size, $index in $font_sizes
+      &--{$size}
+        --font-size 'var(--font-size--%s)' % $size
+
+  &_weight
+
+    // Absolute values
+    &--light-xxx, &--thin
+      --font-weight var(--font-weight--light-xxx)
+    &--light-xx, &--extra-light, &--light-extra
+      --font-weight var(--font-weight--light-xx)
+    &--light-x, &--light
+      --font-weight var(--font-weight--light-x)
+    &--regular, &--normal
+      --font-weight var(--font-weight--regular)
+    &--bold-x, &--medium
+      --font-weight var(--font-weight--bold-x)
+    &--bold-xx, &--semi-bold
+      --font-weight var(--font-weight--bold-xx)
+    &--bold-xxx, &--bold
+      --font-weight var(--font-weight--bold-xxx)
+    &--bold-xxxx, &--extra-bold
+      --font-weight var(--font-weight--bold-xxxx)
+    &--bold-xxxx, &--black
+      --font-weight var(--font-weight--bold-xxxx)
+
+    // Relative values
+    &--lighter
+      font-weight lighter
+    &--bolder
+      font-weight bolder
+
+  &_style
+    &--normal
+      font-style normal
+    &--italic
+      font-style italic
