@@ -38,3 +38,17 @@ section
   p
     .font_style--normal .font_style--normal
     .font_style--italic .font_style--italic
+
+section
+  h2 Font Family
+  p The default font stack is:
+  code 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
+  p You can change the font adding a loading a new font and setting the font name in CSS. Example
+  p Add Montserrat font from google fonts
+  code= '<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">'
+  p And set the font name
+  code
+    | :root {
+    |   --font-family: Montserrat;
+    | }
+
