@@ -7,8 +7,10 @@ $font_weights = light-xxx light-xx light-x regular bold-x bold-xx bold-xxx bold-
   --font-step .25
   --vertical-rhythm $vertical_rhythm
 
+  // Font sizes
   for $size, $index in $font_sizes
     --font-size--{$size} 'calc(var(--vertical-rhythm) * calc(1 + var(--font-step) * %s))' % $index
 
+  // Font weights
   for $weight, $index in $font_weights
     --font-weight--{$weight} 100 * ($index + 1)
