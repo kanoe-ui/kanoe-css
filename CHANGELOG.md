@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.2.0...v1.3.0) (2019-07-22)
+
+
+### Features
+
+* add line height to font sizes ([72aa795](https://github.com/kanoe-ui/kanoe-css/commit/72aa795))
+
 # [1.2.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.1.0...v1.2.0) (2019-07-22)
 
 
