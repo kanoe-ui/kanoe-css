@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.1.0...v1.2.0) (2019-07-22)
+
+
+### Features
+
+* add font family stack default ([67c95a3](https://github.com/kanoe-ui/kanoe-css/commit/67c95a3))
+
 # [1.1.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.0.0...v1.1.0) (2019-07-22)
 
 
