@@ -3,10 +3,9 @@ $font_sizes = small-xxx, small-xx, small-x, small, regular, large, large-x, larg
 $font_weights = light-xxx light-xx light-x regular bold-x bold-xx bold-xxx bold-xxxx bold-xxxxx
 
 :root
+  --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
   --font-step .25
   --vertical-rhythm $vertical_rhythm
-  --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
-
 
   for $size, $index in $font_sizes
     --font-size--{$size} 'calc(var(--vertical-rhythm) * calc(1 + var(--font-step) * %s))' % $index
