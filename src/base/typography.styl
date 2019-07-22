@@ -5,7 +5,9 @@ body
 // Font size
 [class*='font_size']
   --font-size var(--font-size--regular)
+  --line-height calc(var(--vertical-rhythm) * 2)
   font-size var(--font-size)
+  line-height var(--line-height)
 
 // Font weight
 [class*='font_weight']
@@ -18,6 +20,14 @@ body
     for $size, $index in $font_sizes
       &--{$size}
         --font-size 'var(--font-size--%s)' % $size
+        $line_height = calc(var(--vertical-rhythm) * 1)
+        if ($index >= 1 && $index <= 4)
+          $line_height = calc(var(--vertical-rhythm) * 2)
+        if ($index >= 5 && $index <= 7)
+          $line_height = calc(var(--vertical-rhythm) * 3)
+        if ($index >= 8)
+          $line_height = calc(var(--vertical-rhythm) * 4)
+        --line-height $line_height
 
   &_weight
 
