@@ -1,0 +1,22 @@
+body
+  font-family 'Noto Sans', sans-serif
+  // font-family var(--font-family--regular)
+  font-size var(--font-size--regular)
+  // line-height calc(var(--vertical-rhythm) * 2)
+
+// Font size
+[class*='font_size']
+  --font-size var(--font-size--regular)
+  font-size var(--font-size)
+
+// Font weight
+[class*='font_weight']
+  font-weight var(--font-weight)
+
+.font
+
+  &_size
+
+    for $size, $index in $font_sizes
+      &--{$size}
+        --font-size 'var(--font-size--%s)' % $size
