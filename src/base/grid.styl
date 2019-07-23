@@ -18,9 +18,25 @@
   margin-bottom var(--margin-bottom)
   width 100%
   z-index 1
-  outline 1px solid red
-  padding-top 10px
-  padding-bottom 10px
+
+  // Direction
+  &.direction
+    &_row
+      --flex-direction row
+    &_column
+      --flex-direction column
+
+  &.has
+    &_break
+      --flex-wrap wrap
+    &_margin
+      --margin-bottom calc(var(--vertical-rhythm) * 2)
+
+  &.no
+    &_break
+      --flex-wrap nowrap
+    &_margin
+      --margin-bottom 0
 
 // Column base
 [class*='grid_column']
@@ -35,10 +51,50 @@
   flex-shrink 0
   width @flex-basis
   order var(--order)
-  outline 1px solid green
 
   & > .row
     margin-left calc(var(--grid_gutter) * -1)
     width calc(100% + calc(var(--grid_gutter) * 2))
 
 // .grid_column
+
+// Size
+.is
+  for $col in (1..$columns)
+    &_{$col}
+      --quant-columns $col
+      // flex-basis ($col * 6 * 16px)
+
+.align
+  // hporizontal align rows
+  &_horizontal
+    &_left
+      --horizontal-align flex-start
+    &_center
+      --horizontal-align center
+      &_spaced
+        --horizontal-align space-around
+      &_justify
+        --horizontal-align space-between
+    &_right
+      --horizontal-align flex-end
+  // vertical align row OR column
+  &_vertical
+    &_stretch
+      --vertical-align auto
+    &_top
+      --vertical-align flex-start
+    &_center
+      --vertical-align center
+    &_bottom
+      --vertical-align flex-end
+
+// Offset
+for $col in (1..$columns)
+  .has_offset_{$col}
+    --offset $col
+
+// Offset
+for $col in (1..$columns)
+  .is_order_{$col}
+    --order $col

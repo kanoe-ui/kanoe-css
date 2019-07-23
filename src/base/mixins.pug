@@ -1,6 +1,35 @@
 mixin gridRow($modifiers)
   - $modifiersArray = []
 
+  if ($modifiers)
+
+    //- direction
+    if (['row', 'column'].includes($modifiers.direction))
+      - $modifiersArray.push('direction_' + $modifiers.direction)
+
+    //- margin
+    if (typeof $modifiers.margin === 'boolean')
+      - $marginClass = $modifiers.margin ? 'has_margin' : 'no_margin'
+      - $modifiersArray.push($marginClass)
+
+    //- break
+    if (typeof $modifiers.break === 'boolean')
+      - $breakClass = $modifiers.break ? 'has_break' : 'no_break'
+      - $modifiersArray.push($breakClass)
+
+    //- align vertical
+    if (['top', 'center', 'bottom'].includes($modifiers.alignVertical))
+      - $modifiersArray.push('align_vertical_' + $modifiers.alignVertical)
+
+    //- align horizontal
+    if (['left', 'center', 'center_spaced', 'center_justify', 'right'].includes($modifiers.alignHorizontal))
+      - $modifiersArray.push('align_horizontal_' + $modifiers.alignHorizontal)
+
+    //- additional class modifier
+    if (typeof $modifiers.additionalClass === 'string')
+      - $additionalClass = $modifiers.additionalClass
+      - $modifiersArray.push($additionalClass)
+
   - $attributesObj = { class: $modifiersArray.join(' ') }
 
   .grid_row()&attributes($attributesObj)
@@ -10,6 +39,27 @@ mixin gridRow($modifiers)
 mixin gridColumn($modifiers)
   - $modifiersArray = []
   - $attributesObj = { class: $modifiersArray.join(' ') }
+
+  if ($modifiers)
+
+    //- size
+    if (typeof $modifiers.size === 'number')
+      - $sizeClass = 'is_' + $modifiers.size
+      - $modifiersArray.push($sizeClass)
+
+    //- offset
+    if (typeof $modifiers.offset === 'number')
+      - $offsetClass = 'has_offset_' + $modifiers.offset
+      - $modifiersArray.push($offsetClass)
+
+    //- order
+    if (typeof $modifiers.order === 'number')
+      - $orderClass = 'is_order_' + $modifiers.order
+      - $modifiersArray.push($orderClass)
+
+    //- align vertical
+    if (['top', 'center', 'bottom', 'stretch'].includes($modifiers.alignVertical))
+      - $modifiersArray.push('align_vertical_' + $modifiers.alignVertical)
 
   - $attributesObj = { class: $modifiersArray.join(' ') }
 
