@@ -1,0 +1,183 @@
+h1 Grid
+p the grid has 12 columns by default and 16px margin bottom space between 2 rows
+p The grid is defined using the class `grid_row` to define a row and `grid_column` to define a colum
+
+p simple example:
+.demo_grid
+  +gridRow()
+    each _, i in Array(12)
+      +gridColumn()
+        = i + 1
+
+p by default, the columns will break to next line if they dont fit the row
+.demo_grid
+  +gridRow()
+    each _, i in Array(13)
+      +gridColumn()
+        = i + 1
+
+section
+  h2 Rows modifiers
+  p To change the default behavior of the row you can add class modifiers
+
+  h3 Columns line break
+  p to prevent the row to break to next line, you can use the modifier `no_break` in the `grid_row`
+  p to reset to the default, in nested rows, use the class `has_break`
+  .demo_grid
+    +gridRow({break: false})
+      each _, i in Array(13)
+        +gridColumn()
+          = i + 1
+
+  h3 Margin between rows
+  p to remove the space/margin bottom between colunsadd the class `no_margin` in the `grid_row`
+  p to reset to the default, in nested rows, use the class `has_margin`
+  .demo_grid
+    +gridRow({margin: false})
+      each _, i in Array(12)
+        +gridColumn()
+          = i + 1
+    +gridRow()
+      each _, i in Array(12)
+        +gridColumn()
+          = i + 1
+
+  h3 Vertical align columns
+
+  p top
+  .demo_grid
+    +gridRow({alignVertical: 'top', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  p center
+  .demo_grid
+    +gridRow({alignVertical: 'center', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  p bottom
+  .demo_grid
+    +gridRow({alignVertical: 'bottom', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  h3 Horizontal align columns
+
+  p left
+  .demo_grid
+    +gridRow({alignHorizontal: 'left', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  p center
+  .demo_grid
+    +gridRow({alignHorizontal: 'center', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  p right
+  .demo_grid
+    +gridRow({alignHorizontal: 'right', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  p center_spaced
+  .demo_grid
+    +gridRow({alignHorizontal: 'center_spaced', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  p center_justify
+  .demo_grid
+    +gridRow({alignHorizontal: 'center_justify', additionalClass: 'has_height_4'})
+      each _, i in Array(2)
+        +gridColumn()
+          = i + 1
+
+  h3 Columns directions
+  p to change the default colum directoion from horizantal to vertical / stacked the class `direction_column` in the `grid_row`
+  p to reset to the default, in nested rows, use the class `direction_row`
+  .demo_grid
+    +gridRow({direction: 'column'})
+      each _, i in Array(3)
+        +gridColumn()
+          = i + 1
+
+section
+  h2 Columns modifiers
+  p To change the default behavior of the columns you can add class modifiers
+
+  h3 Column size
+  p to change the column size add a class `is_NUMBER` to the column
+  .demo_grid
+    each _, rowCount in Array(12)
+      +gridRow()
+        +gridColumn({size: (rowCount + 1)})
+          = (rowCount + 1)
+
+  h3 Column offset
+  p to add the column offset add a class `has_offset_NUMBER` to the column
+  .demo_grid
+    each _, rowCount in Array(12)
+      +gridRow()
+        +gridColumn({offset: (rowCount + 1)})
+          = (rowCount + 1)
+
+  h3 Column order
+  p to change the column order add a class `is_order_NUMBER` to the column
+  p the default order is 1, so they will folow the order in HTML if no `is_order_NUMBER` is present
+  .demo_grid
+    +gridRow()
+      +gridColumn({order: 3 })
+        | 1 HTML
+      +gridColumn({order: 2 })
+        | 2 HTML
+      +gridColumn()
+        | 3 HTML
+      +gridColumn()
+        | 4 HTML
+
+  h3 Vertical align column
+  p stretch
+  .demo_grid
+    +gridRow({additionalClass: 'has_height_4'})
+      +gridColumn()
+        | 1
+      +gridColumn({alignVertical: 'stretch'})
+        | 2
+
+  p top
+  .demo_grid
+    +gridRow({additionalClass: 'has_height_4'})
+      +gridColumn()
+        | 1
+      +gridColumn({alignVertical: 'top'})
+        | 2
+
+  p center
+  .demo_grid
+    +gridRow({additionalClass: 'has_height_4'})
+      +gridColumn()
+        | 1
+      +gridColumn({alignVertical: 'center'})
+        | 2
+
+  p bottom
+  .demo_grid
+    +gridRow({additionalClass: 'has_height_4'})
+      +gridColumn()
+        | 1
+      +gridColumn({alignVertical: 'bottom'})
+        | 2
+
+
+
+

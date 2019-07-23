@@ -1,7 +1,31 @@
+// Typography
 $vertical_rhythm = 8px
 $font_sizes = small-xxx, small-xx, small-x, small, regular, large, large-x, large-xx, large-xxx
 $font_weights = light-xxx light-xx light-x regular bold-x bold-xx bold-xxx bold-xxxx bold-xxxxx
 
+// Grid
+$columns = 12
+$breakpoints = {
+  mobile_s: 320px
+  mobile_m: 375px
+  mobile_l: 425px
+  tablet: 768px
+  laptop: 1024px
+  laptop_l: 1440px
+  laptop_4k: 2560px
+}
+
+// Rupture config
+rupture.scale           = 0   ($breakpoints.mobile_s)   ($breakpoints.mobile_m)   ($breakpoints.mobile_l)   ($breakpoints.tablet)   ($breakpoints.laptop)   ($breakpoints.laptop_l)   ($breakpoints.laptop_4k)
+//                        └─┬─┘                     └─┬─┘                     └─┬─┘                     └─┬─┘                   └─┬─┘                   └─┬─┘                     └─┬─┘               └─┬─
+// Slice numbers:           1                         2                         3                         4                       5                       6                         7                   8
+rupture.scale-names     = 'default' 'mobile_s' 'mobile_m' 'mobile_l' 'tablet' 'laptop' 'laptop_l' 'laptop_4k'
+rupture.mobile-cutoff   = $breakpoints.tablet
+rupture.desktop-cutoff  = $breakpoints.laptop_l
+rupture.hd-cutoff       = $breakpoints.4k
+
+
+// Custom properties
 :root
   --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
   --font-step .25
