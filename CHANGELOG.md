@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.3.0...v1.4.0) (2019-07-23)
+
+
+### Features
+
+* add grid ([c30d108](https://github.com/kanoe-ui/kanoe-css/commit/c30d108))
+* add helper set height ([7568f3e](https://github.com/kanoe-ui/kanoe-css/commit/7568f3e))
+* add row and column modifiers ([06ab1c3](https://github.com/kanoe-ui/kanoe-css/commit/06ab1c3))
+
 # [1.3.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.2.0...v1.3.0) (2019-07-22)
 
 

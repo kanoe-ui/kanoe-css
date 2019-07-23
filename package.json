@@ -1,6 +1,6 @@
 {
   "name": "kanoe-css",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Just another CSS framework",
   "main": "src/index.js",
   "repository": "git@github.com:kanoe-ui/kanoe-css.git",
