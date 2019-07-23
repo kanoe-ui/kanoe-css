@@ -1,0 +1,5 @@
+.has
+  &_height
+    for num in (1..20)
+      &_{num}
+        height 'calc(var(--vertical-rhythm) * %s)' % (num * 2)
