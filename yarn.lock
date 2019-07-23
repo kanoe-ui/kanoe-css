@@ -5670,6 +5670,11 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+rupture@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/rupture/-/rupture-0.7.1.tgz#d51bcd5fe93757b4855e4ea70ac9d97a897183a1"
+  integrity sha512-rvmUnVep/g7iHwGRMofn41crEHmNVDCsUp3Ws0NDsX7c5CHC7RRU0HsWrKnsY5qv0D3dQ6LjQBqxy+rL976OWQ==
+
 rxjs@^6.3.3:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"

@@ -1,0 +1,18 @@
+mixin gridRow($modifiers)
+  - $modifiersArray = []
+
+  - $attributesObj = { class: $modifiersArray.join(' ') }
+
+  .grid_row()&attributes($attributesObj)
+    if block
+      block
+
+mixin gridColumn($modifiers)
+  - $modifiersArray = []
+  - $attributesObj = { class: $modifiersArray.join(' ') }
+
+  - $attributesObj = { class: $modifiersArray.join(' ') }
+
+  .grid_column&attributes($attributesObj)
+    if block
+      block

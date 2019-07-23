@@ -1,0 +1,44 @@
+:root
+  // Grid
+  --grid_quantity_columns 12
+  --grid_gutter calc(var(--vertical-rhythm) * 2)
+
+.grid_row
+  --vertical-align stretch
+  --flex-direction row
+  --flex-wrap wrap
+  --horizontal-align flex-start
+  --margin-bottom calc(var(--vertical-rhythm) * 2)
+  align-content stretch
+  align-items var(--vertical-align)
+  display flex
+  flex-direction var(--flex-direction)
+  flex-wrap var(--flex-wrap)
+  justify-content var(--horizontal-align)
+  margin-bottom var(--margin-bottom)
+  width 100%
+  z-index 1
+  outline 1px solid red
+  padding-top 10px
+  padding-bottom 10px
+
+// Column base
+[class*='grid_column']
+  --quant-columns 1
+  --vertical-align auto
+  --order 1
+  --offset 0
+  align-self var(--vertical-align)
+  flex-basis calc((100% / var(--grid_quantity_columns)) * var(--quant-columns) - calc(var(--vertical-rhythm) * 2))
+  margin-left calc((100% / var(--grid_quantity_columns)) * var(--offset) + var(--vertical-rhythm))
+  margin-right var(--vertical-rhythm)
+  flex-shrink 0
+  width @flex-basis
+  order var(--order)
+  outline 1px solid green
+
+  & > .row
+    margin-left calc(var(--grid_gutter) * -1)
+    width calc(100% + calc(var(--grid_gutter) * 2))
+
+// .grid_column

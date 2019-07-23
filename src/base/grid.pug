@@ -1,0 +1,15 @@
+h1 Grid
+p the grid has 12 columns by default and 16px margin bottom space between 2 rows
+p The grid is defined using the class `grid_row` to define a row and `grid_column` to define a colum
+
+p simple example:
++gridRow()
+  each _, i in Array(12)
+    +gridColumn()
+      = i + 1
+
+p by default, the columns will break to next line if they dont fit the row
++gridRow()
+  each _, i in Array(13)
+    +gridColumn()
+      = i + 1
