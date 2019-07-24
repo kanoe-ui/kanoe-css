@@ -65,29 +65,30 @@
       --quant-columns $col
       // flex-basis ($col * 6 * 16px)
 
-.align
-  // hporizontal align rows
-  &_horizontal
-    &_left
-      --horizontal-align flex-start
-    &_center
-      --horizontal-align center
-      &_spaced
-        --horizontal-align space-around
-      &_justify
-        --horizontal-align space-between
-    &_right
-      --horizontal-align flex-end
-  // vertical align row OR column
-  &_vertical
-    &_stretch
-      --vertical-align auto
-    &_top
-      --vertical-align flex-start
-    &_center
-      --vertical-align center
-    &_bottom
-      --vertical-align flex-end
+gridColumnAlign()
+  &align
+    // hporizontal align rows
+    &_horizontal
+      &_left
+        --horizontal-align flex-start
+      &_center
+        --horizontal-align center
+        &_spaced
+          --horizontal-align space-around
+        &_justify
+          --horizontal-align space-between
+      &_right
+        --horizontal-align flex-end
+    // vertical align row OR column
+    &_vertical
+      &_stretch
+        --vertical-align auto
+      &_top
+        --vertical-align flex-start
+      &_center
+        --vertical-align center
+      &_bottom
+        --vertical-align flex-end
 
 // Offset
 gridColumnOffset()
@@ -103,5 +104,6 @@ gridColumnOrder()
 
 // Generate columns in all sizes in all breakpoints
 +generateForBreakpoints()
+  gridColumnAlign()
   gridColumnOffset()
   gridColumnOrder()
