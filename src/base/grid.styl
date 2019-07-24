@@ -19,20 +19,23 @@
   width 100%
   z-index 1
 
-  // Direction
+// Direction
+gridRowDirection()
   &.direction
     &_row
       --flex-direction row
     &_column
       --flex-direction column
 
-  &.has
+gridRowHas()
+  &has
     &_break
       --flex-wrap wrap
     &_margin
       --margin-bottom calc(var(--vertical-rhythm) * 2)
 
-  &.no
+gridRowNo()
+  &no
     &_break
       --flex-wrap nowrap
     &_margin
@@ -59,42 +62,55 @@
 // .grid_column
 
 // Size
-.is
+gridColumnSize()
   for $col in (1..$columns)
-    &_{$col}
+    &is_{$col}
       --quant-columns $col
       // flex-basis ($col * 6 * 16px)
 
-.align
-  // hporizontal align rows
-  &_horizontal
-    &_left
-      --horizontal-align flex-start
-    &_center
-      --horizontal-align center
-      &_spaced
-        --horizontal-align space-around
-      &_justify
-        --horizontal-align space-between
-    &_right
-      --horizontal-align flex-end
-  // vertical align row OR column
-  &_vertical
-    &_stretch
-      --vertical-align auto
-    &_top
-      --vertical-align flex-start
-    &_center
-      --vertical-align center
-    &_bottom
-      --vertical-align flex-end
+gridColumnAlign()
+  &align
+    // horizontal align rows
+    &_horizontal
+      &_left
+        --horizontal-align flex-start
+      &_center
+        --horizontal-align center
+        &_spaced
+          --horizontal-align space-around
+        &_justify
+          --horizontal-align space-between
+      &_right
+        --horizontal-align flex-end
+    // vertical align row OR column
+    &_vertical
+      &_stretch
+        --vertical-align auto
+      &_top
+        --vertical-align flex-start
+      &_center
+        --vertical-align center
+      &_bottom
+        --vertical-align flex-end
 
 // Offset
-for $col in (1..$columns)
-  .has_offset_{$col}
-    --offset $col
+gridColumnOffset()
+  for $col in (1..$columns)
+    &has_offset_{$col}
+      --offset $col
 
-// Offset
-for $col in (1..$columns)
-  .is_order_{$col}
-    --order $col
+// Order
+gridColumnOrder()
+  for $col in (1..$columns)
+    &is_order_{$col}
+      --order $col
+
+// Generate columns in all sizes in all breakpoints
++generateForBreakpoints()
+  gridRowDirection()
+  gridRowHas()
+  gridRowNo()
+  gridColumnSize()
+  gridColumnAlign()
+  gridColumnOffset()
+  gridColumnOrder()

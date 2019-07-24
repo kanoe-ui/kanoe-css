@@ -1,0 +1,9 @@
+// Generate some code block on root and in all breakpoints, prefixed with the name of the breakpoint
+generateForBreakpoints()
+  &.
+    {block}
+  for $breakpointName, $breakpointValue in $breakpoints
+    +above($breakpointName)
+      .{$breakpointName}
+        &-
+          {block}
