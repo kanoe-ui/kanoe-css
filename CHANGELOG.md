@@ -1,3 +1,14 @@
+# [1.5.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.4.0...v1.5.0) (2019-07-24)
+
+
+### Features
+
+* add responsive column align ([03fa0a2](https://github.com/kanoe-ui/kanoe-css/commit/03fa0a2))
+* add responsive column size ([5d39185](https://github.com/kanoe-ui/kanoe-css/commit/5d39185))
+* add responsive grid offset ([220830c](https://github.com/kanoe-ui/kanoe-css/commit/220830c))
+* add responsive grid row modifiers break, margin and direction ([8c7f86f](https://github.com/kanoe-ui/kanoe-css/commit/8c7f86f))
+* add responsive order ([3d3828e](https://github.com/kanoe-ui/kanoe-css/commit/3d3828e))
+
 # [1.4.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.3.0...v1.4.0) (2019-07-23)
 
 
