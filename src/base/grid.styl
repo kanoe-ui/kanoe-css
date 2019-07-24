@@ -19,20 +19,23 @@
   width 100%
   z-index 1
 
-  // Direction
+// Direction
+gridRowDirection()
   &.direction
     &_row
       --flex-direction row
     &_column
       --flex-direction column
 
-  &.has
+gridRowHas()
+  &has
     &_break
       --flex-wrap wrap
     &_margin
       --margin-bottom calc(var(--vertical-rhythm) * 2)
 
-  &.no
+gridRowNo()
+  &no
     &_break
       --flex-wrap nowrap
     &_margin
@@ -104,6 +107,9 @@ gridColumnOrder()
 
 // Generate columns in all sizes in all breakpoints
 +generateForBreakpoints()
+  gridRowDirection()
+  gridRowHas()
+  gridRowNo()
   gridColumnSize()
   gridColumnAlign()
   gridColumnOffset()
