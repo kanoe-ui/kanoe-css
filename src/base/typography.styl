@@ -13,52 +13,56 @@ body
 [class*='font_weight']
   font-weight var(--font-weight)
 
-.font
+typographyAll()
+  &font
 
-  &_size
+    &_size
 
-    for $size, $index in $font_sizes
-      &--{$size}
-        --font-size 'var(--font-size--%s)' % $size
-        $line_height = calc(var(--vertical-rhythm) * 1)
-        if ($index >= 1 && $index <= 4)
-          $line_height = calc(var(--vertical-rhythm) * 2)
-        if ($index >= 5 && $index <= 7)
-          $line_height = calc(var(--vertical-rhythm) * 3)
-        if ($index >= 8)
-          $line_height = calc(var(--vertical-rhythm) * 4)
-        --line-height $line_height
+      for $size, $index in $font_sizes
+        &--{$size}
+          --font-size 'var(--font-size--%s)' % $size
+          $line_height = calc(var(--vertical-rhythm) * 1)
+          if ($index >= 1 && $index <= 4)
+            $line_height = calc(var(--vertical-rhythm) * 2)
+          if ($index >= 5 && $index <= 7)
+            $line_height = calc(var(--vertical-rhythm) * 3)
+          if ($index >= 8)
+            $line_height = calc(var(--vertical-rhythm) * 4)
+          --line-height $line_height
 
-  &_weight
+    &_weight
 
-    // Absolute values
-    &--light-xxx, &--thin
-      --font-weight var(--font-weight--light-xxx)
-    &--light-xx, &--extra-light, &--light-extra
-      --font-weight var(--font-weight--light-xx)
-    &--light-x, &--light
-      --font-weight var(--font-weight--light-x)
-    &--regular, &--normal
-      --font-weight var(--font-weight--regular)
-    &--bold-x, &--medium
-      --font-weight var(--font-weight--bold-x)
-    &--bold-xx, &--semi-bold
-      --font-weight var(--font-weight--bold-xx)
-    &--bold-xxx, &--bold
-      --font-weight var(--font-weight--bold-xxx)
-    &--bold-xxxx, &--extra-bold
-      --font-weight var(--font-weight--bold-xxxx)
-    &--bold-xxxx, &--black
-      --font-weight var(--font-weight--bold-xxxx)
+      // Absolute values
+      &--light-xxx, &--thin
+        --font-weight var(--font-weight--light-xxx)
+      &--light-xx, &--extra-light, &--light-extra
+        --font-weight var(--font-weight--light-xx)
+      &--light-x, &--light
+        --font-weight var(--font-weight--light-x)
+      &--regular, &--normal
+        --font-weight var(--font-weight--regular)
+      &--bold-x, &--medium
+        --font-weight var(--font-weight--bold-x)
+      &--bold-xx, &--semi-bold
+        --font-weight var(--font-weight--bold-xx)
+      &--bold-xxx, &--bold
+        --font-weight var(--font-weight--bold-xxx)
+      &--bold-xxxx, &--extra-bold
+        --font-weight var(--font-weight--bold-xxxx)
+      &--bold-xxxx, &--black
+        --font-weight var(--font-weight--bold-xxxx)
 
-    // Relative values
-    &--lighter
-      font-weight lighter
-    &--bolder
-      font-weight bolder
+      // Relative values
+      &--lighter
+        font-weight lighter
+      &--bolder
+        font-weight bolder
 
-  &_style
-    &--normal
-      font-style normal
-    &--italic
-      font-style italic
+    &_style
+      &--normal
+        font-style normal
+      &--italic
+        font-style italic
+
++generateForBreakpoints()
+  typographyAll()
