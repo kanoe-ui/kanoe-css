@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.5.0...v1.6.0) (2019-07-24)
+
+
+### Features
+
+* add responsive helper has height ([940cab3](https://github.com/kanoe-ui/kanoe-css/commit/940cab3))
+* add responsive typography ([14bb4b9](https://github.com/kanoe-ui/kanoe-css/commit/14bb4b9))
+
 # [1.5.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.4.0...v1.5.0) (2019-07-24)
 
 
