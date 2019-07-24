@@ -94,7 +94,12 @@ for $col in (1..$columns)
   .has_offset_{$col}
     --offset $col
 
-// Offset
-for $col in (1..$columns)
-  .is_order_{$col}
-    --order $col
+// Order
+gridColumnOrder()
+  for $col in (1..$columns)
+    &is_order_{$col}
+      --order $col
+
+// Generate columns in all sizes in all breakpoints
++generateForBreakpoints()
+  gridColumnOrder()
