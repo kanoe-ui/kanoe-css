@@ -90,9 +90,10 @@
       --vertical-align flex-end
 
 // Offset
-for $col in (1..$columns)
-  .has_offset_{$col}
-    --offset $col
+gridColumnOffset()
+  for $col in (1..$columns)
+    &has_offset_{$col}
+      --offset $col
 
 // Order
 gridColumnOrder()
@@ -102,4 +103,5 @@ gridColumnOrder()
 
 // Generate columns in all sizes in all breakpoints
 +generateForBreakpoints()
+  gridColumnOffset()
   gridColumnOrder()
