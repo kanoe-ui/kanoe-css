@@ -1,36 +1,38 @@
 
-$color-bg = rgba(#5296A5, .5)
-$color-pd = rgba(#A57548, .8)
-$color-bd = rgba(#FCD7AD, .8)
-$color-mg = rgba(#F6C28B, .8)
+$color_bg = rgba(#5296A5, .5)
+$color_pd = rgba(#A57548, .8)
+$color_bd = rgba(#FCD7AD, .8)
+$color_mg = rgba(#F6C28B, .8)
+$color_text = #333
 
 .demo
 
   &_grid
-    color #333
+    color $color_text
     margin-bottom calc(var(--vertical-rhythm) * 2)
     margin-top calc(var(--vertical-rhythm) * 2)
+    overflow-x hidden
+    padding-bottom calc(var(--vertical-rhythm) * 2)
 
     &:hover
       overflow-x auto
 
     [class*='grid_row']
-      --background-color $color-bg
+      --background-color $color_bg
       background-color var(--background-color)
       border-radius 5px
       min-height calc(var(--vertical-rhythm) * 4)
       position relative
       text-align center
-      z-index 1
-
+      z-index 10
 
       &:after
-        --visibility hiddenborder-radius 3px
+        --visibility hidden
         --opacity 0
-        background $color-mg
+        background $color_mg
         content 'margin row'
         display block
-        font-size 8px
+        font-size var(--vertical-rhythm)
         height var(--margin-bottom)
         left calc(var(--vertical-rhythm) * 1)
         opacity var(--opacity)
@@ -50,36 +52,34 @@ $color-mg = rgba(#F6C28B, .8)
           --opacity 1
 
     [class*='grid_column']
-      --background-color $color-bg
+      --background-color $color_bg
+      align-items center
       background-color var(--background-color)
-      border-radius 5px
       color #333
+      display flex
+      justify-content center
       min-height calc(var(--vertical-rhythm) * 4)
       position relative
       text-align center
       transition color .2s linear
-      z-index 2
-      display flex
-      justify-content center
-      align-items center
+      z-index 20
 
       &:hover
-        z-index 3
         color transparent
+        z-index 30
 
         &:before
-          --visibility visible
           --opacity 1
+          --visibility visible
 
         &:after
-          --visibility visible
           --opacity 1
           --outline-color red
+          --visibility visible
 
       &:before
         --visibility hidden
         --opacity 0
-        // visibility var(--visibility)
         background-color #808080
         color white
         content attr(class)
@@ -93,15 +93,15 @@ $color-mg = rgba(#F6C28B, .8)
         transform translate(-50%, -50%)
         transition opacity .2s linear
         transition-delay .2s
+        visibility var(--visibility)
+        z-index 20
 
       &:after
         --visibility hidden
         --opacity 0
         --outline-color transparent
-        // visibility var(--visibility)
         background transparent
-        border-left var(--padding) solid $color-pd
-        border-right var(--padding) solid $color-pd
+        box-shadow 8px 0 0 $color_mg, -8px 0 0 $color_mg
         content ''
         display block
         height calc(100% - 1px)
@@ -113,4 +113,6 @@ $color-mg = rgba(#F6C28B, .8)
         position absolute
         top 1px
         transition opacity .2s linear, outline .2s linear
+        visibility var(--visibility)
         width calc(100% - 1px)
+        z-index 10
