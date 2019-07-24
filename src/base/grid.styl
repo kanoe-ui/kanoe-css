@@ -59,15 +59,15 @@
 // .grid_column
 
 // Size
-.is
+gridColumnSize()
   for $col in (1..$columns)
-    &_{$col}
+    &is_{$col}
       --quant-columns $col
       // flex-basis ($col * 6 * 16px)
 
 gridColumnAlign()
   &align
-    // hporizontal align rows
+    // horizontal align rows
     &_horizontal
       &_left
         --horizontal-align flex-start
@@ -104,6 +104,7 @@ gridColumnOrder()
 
 // Generate columns in all sizes in all breakpoints
 +generateForBreakpoints()
+  gridColumnSize()
   gridColumnAlign()
   gridColumnOffset()
   gridColumnOrder()
