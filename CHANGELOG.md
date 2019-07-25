@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.6.0...v1.7.0) (2019-07-25)
+
+
+### Features
+
+* add  grid container ([4d4382b](https://github.com/kanoe-ui/kanoe-css/commit/4d4382b))
+
 # [1.6.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.5.0...v1.6.0) (2019-07-24)
 
 
