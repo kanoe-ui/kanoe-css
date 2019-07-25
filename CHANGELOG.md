@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.7.0...v1.8.0) (2019-07-25)
+
+
+### Bug Fixes
+
+* remove margin and padding for font size classes ([12be70f](https://github.com/kanoe-ui/kanoe-css/commit/12be70f))
+
+
+### Features
+
+* add layout component heaader simple ([01660e4](https://github.com/kanoe-ui/kanoe-css/commit/01660e4))
+
 # [1.7.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.6.0...v1.7.0) (2019-07-25)
 
 
