@@ -15,6 +15,16 @@ $breakpoints = {
   laptop_4k: 2560px
 }
 
+$breakpoints_containers = {
+  mobile_s: 100%
+  mobile_m: 100%
+  mobile_l: 100%
+  tablet: 736px
+  laptop: 992px
+  laptop_l: 1280px
+  laptop_4k: 1120px
+}
+
 // Rupture config
 rupture.scale           = 0   ($breakpoints.mobile_s)   ($breakpoints.mobile_m)   ($breakpoints.mobile_l)   ($breakpoints.tablet)   ($breakpoints.laptop)   ($breakpoints.laptop_l)   ($breakpoints.laptop_4k)
 //                        └─┬─┘                     └─┬─┘                     └─┬─┘                     └─┬─┘                   └─┬─┘                   └─┬─┘                     └─┬─┘               └─┬─
@@ -30,6 +40,10 @@ rupture.hd-cutoff       = $breakpoints.4k
   --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
   --font-step .25
   --vertical-rhythm $vertical_rhythm
+
+  // Container widths
+  for $breakpoints_container, $width in $breakpoints_containers
+    --container-width--{$breakpoints_container} $width
 
   // Font sizes
   for $size, $index in $font_sizes
