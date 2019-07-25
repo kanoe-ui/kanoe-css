@@ -17,6 +17,11 @@ $color_text = #333
     &:hover
       overflow-x auto
 
+    [class*='grid_container']
+      --background-color $color_bg
+      background-color var(--background-color)
+      min-height calc(var(--vertical-rhythm) * 4)
+
     [class*='grid_row']
       --background-color $color_bg
       background-color var(--background-color)

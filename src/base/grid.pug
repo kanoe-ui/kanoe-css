@@ -17,6 +17,21 @@ p by default, the columns will break to next line if they dont fit the row
         = i + 1
 
 section
+
+  h2 Container
+  p the grids or any other element can be nested inside a `.grid_container` class
+  p the widths of the container per breakpoint:
+  ol
+    li mobile_s: 100%
+    li mobile_m: 100%
+    li mobile_l: 100%
+    li tablet: 736px
+    li laptop: 992px
+    li laptop_l: 1120px
+    li laptop_4k: 1120px
+  .demo_grid
+    .grid_container .grid_container
+
   h2 Rows modifiers
   p To change the default behavior of the row you can add class modifiers
 
