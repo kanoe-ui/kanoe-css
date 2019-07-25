@@ -7,13 +7,17 @@ html(lang='en')
     link(href='./styles/index.css' rel='stylesheet' type='text/css')
 
   body
+
+    .header.has_border.is_sticky
+      .grid_container
+        .header_left
+          h1.font_size--large-xxx Kanoe CSS
+
     .grid_container
-
-      h1 Kanoe CSS
-
       section
         include base/mixins
         include base/reset
         include base/typography
         include base/grid
         include base/helpers
+        include layout/header

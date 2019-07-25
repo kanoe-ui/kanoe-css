@@ -14,7 +14,6 @@ $breakpoints = {
   laptop_l: 1440px
   laptop_4k: 2560px
 }
-
 $breakpoints_containers = {
   mobile_s: 100%
   mobile_m: 100%
@@ -24,6 +23,10 @@ $breakpoints_containers = {
   laptop_l: 1280px
   laptop_4k: 1120px
 }
+
+// Colors
+$color_white = #fff
+$color_gray = #808080
 
 // Rupture config
 rupture.scale           = 0   ($breakpoints.mobile_s)   ($breakpoints.mobile_m)   ($breakpoints.mobile_l)   ($breakpoints.tablet)   ($breakpoints.laptop)   ($breakpoints.laptop_l)   ($breakpoints.laptop_4k)
@@ -37,6 +40,8 @@ rupture.hd-cutoff       = $breakpoints.4k
 
 // Custom properties
 :root
+  --color-gray $color_gray
+  --color-white $color_white
   --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
   --font-step .25
   --vertical-rhythm $vertical_rhythm

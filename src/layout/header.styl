@@ -1,0 +1,43 @@
+.header
+  --background-color var(--color-white)
+  --padding-horizontal var(--vertical-rhythm)
+  --padding-vertical var(--vertical-rhythm)
+  --border-color var(--color-white)
+  align-content center
+  align-items stretch
+  background-color var(--background-color)
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+  justify-content space-between
+  padding var(--padding-vertical) var(--padding-horizontal)
+  border-bottom 1px solid var(--border-color)
+
+  & > .grid_container
+    align-content center
+    align-items stretch
+    background-color var(--background-color)
+    display flex
+    flex-direction row
+    flex-wrap nowrap
+    justify-content space-between
+    padding 0
+
+  &.has_border
+    --border-color var(--color-gray)
+
+  &.is_sticky
+    position sticky
+    top 0
+    z-index 30
+
+  [class*='header']
+    order 1
+    flex-grow 1
+
+  // &_left
+
+  // &_center
+
+  // &_right
+
