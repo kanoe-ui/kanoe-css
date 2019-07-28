@@ -3,7 +3,7 @@ body
   font-size var(--font-size--regular)
 
 // Font size
-[class*='font_size']
+[class*='font_size'], [class*='is_title'], [class*='is_subtitle']
   --font-size var(--font-size--regular)
   --line-height calc(var(--vertical-rhythm) * 2)
   font-size var(--font-size)
@@ -16,6 +16,17 @@ body
   font-weight var(--font-weight)
 
 typographyAll()
+
+  &is_title
+    --font-size var(--font-size--large-xxx)
+    --line-height var(--line-height--large-xxx)
+    font-weight var(--font-weight--bold-xx)
+
+  &is_subtitle
+    --font-size var(--font-size--large-x)
+    --line-height var(--line-height--large-x)
+    font-weight var(--font-weight--bold-x)
+
   &font
 
     &_size
@@ -23,14 +34,7 @@ typographyAll()
       for $size, $index in $font_sizes
         &--{$size}
           --font-size 'var(--font-size--%s)' % $size
-          $line_height = calc(var(--vertical-rhythm) * 1)
-          if ($index >= 1 && $index <= 4)
-            $line_height = calc(var(--vertical-rhythm) * 2)
-          if ($index >= 5 && $index <= 7)
-            $line_height = calc(var(--vertical-rhythm) * 3)
-          if ($index >= 8)
-            $line_height = calc(var(--vertical-rhythm) * 4)
-          --line-height $line_height
+          --line-height 'var(--line-height--%s)' % $size
 
     &_weight
 

@@ -54,6 +54,17 @@ rupture.hd-cutoff       = $breakpoints.4k
   for $size, $index in $font_sizes
     --font-size--{$size} 'calc(var(--vertical-rhythm) * calc(1 + var(--font-step) * %s))' % $index
 
+  // Line heights
+  for $size, $index in $font_sizes
+    $line_height = calc(var(--vertical-rhythm) * 1)
+    if ($index >= 1 && $index <= 4)
+      $line_height = calc(var(--vertical-rhythm) * 2)
+    if ($index >= 5 && $index <= 7)
+      $line_height = calc(var(--vertical-rhythm) * 3)
+    if ($index >= 8)
+      $line_height = calc(var(--vertical-rhythm) * 4)
+    --line-height--{$size} $line_height
+
   // Font weights
   for $weight, $index in $font_weights
     --font-weight--{$weight} 100 * ($index + 1)

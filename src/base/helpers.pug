@@ -9,3 +9,20 @@ section
     .demo_grid
       +gridRow({additionalClass: 'has_height_5'})
         | content
+
+  section
+    h2 Hidden
+    p hide a element with `display: block`
+
+    +generateExampleBreakpoints('is_hidden', 'Hidden from')
+
+  section
+    h2 Invisible
+    p hide a element with `visibility: hidden`
+
+    +generateExampleBreakpoints('is_invisible', 'Invisible from')
+
+    h2 Visible
+    p show a element with `visibility: visible`
+
+    +generateExampleBreakpoints('is_visible', 'Visible from')
