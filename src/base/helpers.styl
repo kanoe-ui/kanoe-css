@@ -4,6 +4,13 @@ helperHeight()
       &_{num}
         height 'calc(var(--vertical-rhythm) * %s)' % (num * 2)
 
+helperHidden()
+  &is_hidden
+    display none
+
+.is-hidden
+  display: none !important
 // Generate columns in all sizes in all breakpoints
 +generateForBreakpoints()
   helperHeight()
+  helperHidden()
