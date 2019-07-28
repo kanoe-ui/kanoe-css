@@ -8,9 +8,12 @@ helperHidden()
   &is_hidden
     display none
 
-.is-hidden
-  display: none !important
+helperInvisible()
+  &is_invisible
+    visibility hidden
+
 // Generate columns in all sizes in all breakpoints
 +generateForBreakpoints()
   helperHeight()
   helperHidden()
+  helperInvisible()
