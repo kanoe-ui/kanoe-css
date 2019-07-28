@@ -1,3 +1,13 @@
+# [1.9.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.8.0...v1.9.0) (2019-07-28)
+
+
+### Features
+
+* add responsible helper visible ([6933442](https://github.com/kanoe-ui/kanoe-css/commit/6933442))
+* add responsive helper is_hidden ([c0c5885](https://github.com/kanoe-ui/kanoe-css/commit/c0c5885))
+* add responsive helper is_invisible ([36b8592](https://github.com/kanoe-ui/kanoe-css/commit/36b8592))
+* add title and subtitle class ([5222285](https://github.com/kanoe-ui/kanoe-css/commit/5222285))
+
 # [1.8.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.7.0...v1.8.0) (2019-07-25)
 
 
