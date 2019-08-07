@@ -1,0 +1,64 @@
+[class*='button']
+  // default
+  --background-color var(--color_gray_xxx)
+  --border-color var(--color_gray_xxx)
+  --color var(--color_gray)
+
+  // hover
+  --background-color-hover var(--color_gray_xxx_75)
+  --border-color-hover var(--color_gray_xxx_75)
+  --color-hover var(--color_gray_75)
+
+  // disabled
+  --background-color-disabled var(--color_gray_xxx_25)
+  --border-color-disabled var(--color_gray_xxx_25)
+  --color-disabled var(--color_gray_75)
+
+  // outline
+  --background-color-outline var(--color_white)
+  --border-color-outline var(--color_gray_xxx)
+  --border-color-outline-hover var(--color_gray_xxx_75)
+  --color-outline var(--color_gray_xxx)
+
+  --border-radius calc(var(--vertical-rhythm) / 2)
+  --border-width var(--border-width--regular)
+  --cursor pointer
+  --display inline-block
+  --font-size var(--font-size--regular)
+  --line-height var(--line-height--regular)
+  --padding-horizontal calc(var(--vertical-rhythm) * 2)
+  --padding-vertical calc(var(--vertical-rhythm) * 1)
+
+  background-color var(--background-color)
+  border var(--border-width) solid var(--border-color)
+  border-radius var(--border-radius)
+  cursor var(--cursor)
+  display var(--display)
+  font-size var(--font-size)
+  font-weight var(--font-weight--regular)
+  line-height  var(--font-size)
+  padding calc(var(--padding-vertical) - var(--border-width)) var(--padding-horizontal)
+  user-select none
+  font-family var(--font-family)
+  color var(--color)
+
+  &:hover, &:focus, &.is_focused, &.is_active
+    --background-color var(--background-color-hover)
+    --border-color var(--border-color-hover)
+    --color var(--color-hover)
+
+  &:disabled, &.is_disabled
+    --background-color var(--background-color-disabled)
+    --border-color var(--border-color-disabled)
+    --cursor default
+    --color var(--color-disabled)
+
+  &.is_outline
+    --background-color var(--background-color-outline)
+    --border-color var(--border-color-outline)
+    --color var(--color-outline)
+    &:hover, &:focus, &.is_active
+      --border-color var(--border-color-outline-hover)
+      --color var(--color-outline-hover)
+
+
