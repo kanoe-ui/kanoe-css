@@ -25,7 +25,7 @@
   "prefixVarsWithDollar": true,
   "quotePref": "single",
   "semicolons": "never",
-  "sortOrder": "alphabetical",
+  "sortOrder": false,
   "universal": "never",
   "valid": true,
   "zeroUnits": "never",
