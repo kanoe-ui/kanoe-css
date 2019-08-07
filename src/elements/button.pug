@@ -1,0 +1,34 @@
+h1 Button
+
+section
+  h2 Default
+  p
+    span.button .button
+    button.button(disabled) .button or
+    span.button.is_outline .button 1
+
+  - $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
+  h2 Colors
+  p
+    each $color_name in $color_themes
+      button.button(class='is_' + $color_name)= $color_name
+
+  h2 Disabled
+  p
+    each $color_name in $color_themes
+      button.button.is_disabled(class='is_' + $color_name)= $color_name
+
+  h2 Outline
+  p
+    each $color_name in $color_themes
+      button.button.is_outline(class='is_' + $color_name)= $color_name
+
+  h2 Focus
+  p
+    each $color_name in $color_themes
+      button.button.is_focused(class='is_' + $color_name)= $color_name
+
+  h2 Active
+  p
+    each $color_name in $color_themes
+      span.button.is_active(class='is_' + $color_name)= $color_name
