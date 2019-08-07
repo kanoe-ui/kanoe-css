@@ -1,8 +1,9 @@
 .header
-  --background-color var(--color-white)
+  --background-color var(--color_white)
   --padding-horizontal var(--vertical-rhythm)
   --padding-vertical var(--vertical-rhythm)
-  --border-color var(--color-white)
+  --border-color var(--color_white)
+  --border-width var(--border-width--regular)
   align-content center
   align-items stretch
   background-color var(--background-color)
@@ -10,8 +11,8 @@
   flex-direction row
   flex-wrap nowrap
   justify-content space-between
-  padding var(--padding-vertical) var(--padding-horizontal)
-  border-bottom 1px solid var(--border-color)
+  padding var(--padding-vertical) var(--padding-horizontal) calc(var(--padding-vertical) - var(--border-width)) var(--padding-horizontal)
+  border-bottom var(--border-width) solid var(--border-color)
 
   & > .grid_container
     align-content center
@@ -24,7 +25,7 @@
     padding 0
 
   &.has_border
-    --border-color var(--color-gray)
+    --border-color var(--color_gray)
 
   &.is_sticky
     position sticky
