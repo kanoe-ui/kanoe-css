@@ -1,0 +1,25 @@
+- $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
+
+h1 Colors
+
+section
+  h2 Base
+  .grid_row
+    each $color_name in $color_themes
+      .grid_column
+        div(style='background: var(--color_' + $color_name +')' )= $color_name
+
+  .grid_row
+    each $color_name in $color_themes
+      .grid_column
+        div(style='background: var(--color_' + $color_name +'_75)' )= $color_name
+
+  .grid_row
+    each $color_name in $color_themes
+      .grid_column
+        div(style='background: var(--color_' + $color_name +'_50)' )= $color_name
+
+  .grid_row
+    each $color_name in $color_themes
+      .grid_column
+        div(style='background: var(--color_' + $color_name +'_25)' )= $color_name

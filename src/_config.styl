@@ -38,21 +38,6 @@ $color_orange = #f6ab2f
 $color_violet = #6758f3
 $color_yellow = #facf55
 
-// Themes
-$theme_black = {name: 'black', background:  $color_black, color: $color_white}
-$theme_gray = {name: 'gray', background:  $color_gray, color: $color_white}
-$theme_gray_x = {name: 'gray_x', background:  $color_gray_x, color: $color_white}
-$theme_gray_xx = {name: 'gray_xx', background:  $color_gray_xx, color: $color_gray}
-$theme_gray_xxx = {name: 'gray_xxx', background:  $color_gray_xxx, color: $color_gray}
-$theme_white = {name: 'white', background:  $color_white, color: $color_gray}
-$theme_red = {name: 'red', background:  $color_red, color: $color_white}
-$theme_green = {name: 'green', background:  $color_green, color: $color_white}
-$theme_blue = {name: 'blue', background:  $color_blue, color: $color_white}
-$theme_orange = {name: 'orange', background:  $color_orange , color: $color_gray}
-$theme_violet = {name: 'violet', background:  $color_violet, color: $color_white}
-$theme_yellow = {name: 'yellow', background:  $color_yellow, color: $color_gray}
-$themes = $theme_black $theme_blue $theme_gray $theme_gray_x $theme_gray_xx $theme_gray_xxx $theme_green $theme_orange $theme_red $theme_violet $theme_white $theme_yellow
-
 // Rupture config
 rupture.scale           = 0   ($breakpoints.mobile_s)   ($breakpoints.mobile_m)   ($breakpoints.mobile_l)   ($breakpoints.tablet)   ($breakpoints.laptop)   ($breakpoints.laptop_l)   ($breakpoints.laptop_4k)
 //                        └─┬─┘                     └─┬─┘                     └─┬─┘                     └─┬─┘                   └─┬─┘                   └─┬─┘                     └─┬─┘               └─┬─
@@ -69,20 +54,6 @@ rupture.hd-cutoff       = $breakpoints.4k
   --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
   --font-step .25
   --vertical-rhythm $vertical_rhythm
-
-  for $theme, $index in $themes
-    $theme = $themes[$index]
-    $theme_name = $theme['name']
-    $background_color = $theme['background']
-    $text_color = $theme['color']
-    --color_{$theme_name} $background_color
-    --color_{$theme_name}_75 lighten($background_color, 25%)
-    --color_{$theme_name}_50 lighten($background_color, 50%)
-    --color_{$theme_name}_25 lighten($background_color, 75%)
-    --color_{$theme_name}_text $text_color
-    --color_{$theme_name}_text_75 lighten($text_color, 25%)
-    --color_{$theme_name}_text_50 lighten($text_color, 50%)
-    --color_{$theme_name}_text_25 lighten($text_color, 75%)
 
   // Container widths
   for $breakpoints_container, $width in $breakpoints_containers
@@ -106,33 +77,3 @@ rupture.hd-cutoff       = $breakpoints.4k
   // Font weights
   for $weight, $index in $font_weights
     --font-weight--{$weight} 100 * ($index + 1)
-
-for $theme, $index in $themes
-  $theme = $themes[$index]
-  $theme_name = $theme['name']
-  $background_color = $theme['background']
-  .button.is_{$theme_name}
-    --background-color 'var(--color_%s)' % unquote($theme_name)
-    --border-color 'var(--color_%s)' % unquote($theme_name)
-    --color 'var(--color_%s_text)' % unquote($theme_name)
-    // hover
-    --background-color-hover 'var(--color_%s_75)' % unquote($theme_name)
-    --border-color-hover 'var(--color_%s_75)' % unquote($theme_name)
-    --color-hover 'var(--color_%s_text_75)' % unquote($theme_name)
-    // disabled
-    --background-color-disabled 'var(--color_%s_25)' % unquote($theme_name)
-    --border-color-disabled 'var(--color_%s_25)' % unquote($theme_name)
-    --color-disabled 'var(--color_%s_text_50)' % unquote($theme_name)
-    // outline
-    --background-color-outline 'var(--color_white)' % unquote($theme_name)
-    if $theme_name == 'white'
-      --border-color-outline var(--color_gray_75)
-      --color-outline var(--color_gray_75)
-      --border-color-outline-hover var(--color_gray_50)
-      --color-outline-hover var(--color_gray_50)
-    else
-      --border-color-outline 'var(--color_%s)' % unquote($theme_name)
-      --color-outline 'var(--color_%s)' % unquote($theme_name)
-      --border-color-outline-hover 'var(--color_%s_50)' % unquote($theme_name)
-      --color-outline-hover 'var(--color_%s_50)' % unquote($theme_name)
-
