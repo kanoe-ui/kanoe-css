@@ -29,11 +29,6 @@ $themes = $theme_black $theme_blue $theme_gray $theme_gray_x $theme_gray_xx $the
 
 // Custom properties
 :root
-  --border-width--regular 1px
-  --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
-  --font-step .25
-  --vertical-rhythm $vertical_rhythm
-
   for $theme, $index in $themes
     $theme = $themes[$index]
     $theme_name = $theme['name']
