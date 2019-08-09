@@ -7,7 +7,7 @@
   "commaSpace": "always",
   "commentSpace": "always",
   "cssLiteral": "never",
-  "depthLimit": 3,
+  "depthLimit": 5,
   "duplicates": true,
   "extendPref": "@extends",
   "indentPref": 2,
