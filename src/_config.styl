@@ -50,8 +50,12 @@ rupture.hd-cutoff       = $breakpoints.4k
 
 // Custom properties
 :root
-  --border-width--regular 1px
-  --font-family 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
+  --font-family-monospace-default Consolas, 'Andale Mono', Monaco, 'Courier New', Courier, monospace
+  --font-family-sans-serif-default BlinkMacSystemFont, -apple-systemx, 'Segoe UI', Roboto, 'Helvetica Neuex', Helveticax, Arial, sans-serif
+  // --font-family-sans-serif-custom
+  --font-family var(--font-family-sans-serif-custom), var(--font-family-sans-serif-default)
+  /* stylelint-disable-next-line */
+  --border-width-regular 1px
   --font-step .25
   --vertical-rhythm $vertical_rhythm
 

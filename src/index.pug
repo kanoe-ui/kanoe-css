@@ -5,6 +5,16 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title kanoe-css
     link(href='./styles/index.css' rel='stylesheet' type='text/css')
+    style.
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+        --font-family-sans-serif-custom: 'Inter';
+      }
+      @supports (font-variation-settings: normal) {
+        :root {
+          --font-family-sans-serif-custom: 'Inter';
+        }
+      }
 
   body
 
