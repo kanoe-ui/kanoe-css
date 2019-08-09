@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.10.0...v1.11.0) (2019-08-09)
+
+
+### Features
+
+* add new font stack, add docs ([7543c43](https://github.com/kanoe-ui/kanoe-css/commit/7543c43))
+
 # [1.10.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.9.0...v1.10.0) (2019-08-07)
 
 
