@@ -1,0 +1,261 @@
+h1 Font Inter
+
+section
+  h2 Suggested main font
+  p
+    | The font used in the docs, examples and in this cocumentations is the
+    a(href='https://rsms.me/inter/' target='_black') The Inter typeface family
+    | NOT included in the CSS package
+
+  p To include the font inter Inter just add
+  pre
+    code
+      |   @import url('https://rsms.me/inter/inter.css');
+      |   :root {
+      |     --font-family-sans-serif-custom: 'Inter';
+      |   }
+      |   @supports (font-variation-settings: normal) {
+      |     :root {
+      |       --font-family-sans-serif-custom: 'Inter';
+      |     }
+      |   }
+  p Check the section `Add new font`
+
+
+section
+  h2 Contextual alternates
+  p This feature is enabled by default and causes certain characters to adjust themselves or be replaced depending on the surrounding context.
+  .grid_row
+    .grid_column.is_1
+      div .has_liga
+      div .hasnt_liga
+    .grid_column.is_2
+      .has_calt 12:34, FE—X
+      .hasnt_calt 12:34, FE—X
+    .grid_column.is_2
+      .has_calt 4.2
+      .hasnt_calt 4.2
+    .grid_column.is_2
+      .has_calt (SEMI)PERMANENT
+      .hasnt_calt (SEMI)PERMANENT
+    .grid_column.is_2
+      .has_calt SFO -> STO
+      .hasnt_calt SFO -> STO
+    .grid_column.is_2
+      .has_calt IIA --> OGG
+      .hasnt_calt IIA --> OGG
+    .grid_column.is_2
+      .has_calt ARN ⟺ OGG
+      .hasnt_calt ARN ⟺ OGG
+    .grid_column.is_2
+      .has_calt M@N m@n
+      .hasnt_calt M@N m@n
+    .grid_column.is_2
+      .has_calt Smile :-)
+      .hasnt_calt Smile :-)
+  p There are many more contextual alternates.
+
+section
+  h2 Standard ligatures
+  p Conversion of common sequences into higher-fidelity glyphs, like arrows and enclosing graphemes.
+  .grid_row
+    .grid_column.is_1
+      div .has_liga
+      div .hasnt_liga
+    .grid_column.is_1
+      .has_liga 3x9
+      .hasnt_liga 3x9
+    .grid_column.is_2
+      .has_liga -> --> --->
+      .hasnt_liga -> --> --->
+    .grid_column.is_2
+      .has_liga <- <-- <---
+      .hasnt_liga <- <-- <---
+    .grid_column.is_2
+      .has_liga <-> <-->
+      .hasnt_liga <-> <-->
+    .grid_column.is_2
+      .has_liga => ==> <==
+      .hasnt_liga => ==> <==
+    .grid_column.is_2
+      .has_liga <=> <==>
+      .hasnt_liga <=> <==>
+
+section
+  h2 Tabular numbers
+  p Fixed-width numbers are useful for tabular data, where comparing columns across rows is desired.
+  .grid_row
+    .grid_column.is_1
+      div .is_tnum
+      div .isnt_tnum
+    .grid_column.is_1
+      .is_tnum 1234567890
+      .isnt_tnum 1234567890
+    .grid_column.is_1
+      .is_tnum 1131711
+      .isnt_tnum 1131711
+    .grid_column.is_2
+      .is_tnum 0040900
+      .isnt_tnum 0040900
+    .grid_column.is_2
+      .is_tnum 11:31,711
+      .isnt_tnum 11:31,711
+    .grid_column.is_2
+      .is_tnum 00:40.900
+      .isnt_tnum 00:40.900
+    .grid_column.is_2
+      .is_tnum 0.45, 0.91, +0.08
+      .isnt_tnum 0.is_2.45, 0.91, +0.08
+    .grid_column
+      .is_tnum 1.00, 9.44, −0.13
+      .isnt_tnum 1.00, 9.44, −0.13
+    .grid_column.is_2
+      .is_tnum 0.00, 1.13, ~7.12
+      .isnt_tnum 0.00, 1.13, ~7.12
+
+section
+  h2 Fractions
+  p This feature is contextually sensitive and will convert "words" of numbers separated by forward slash into proper fractions. This feature is dynamic and allows for any fractions. Note that the digits used for fractions are custom-made for their small size, and are even made separately from the slightly larger Superscript and Subscript numbers.
+  .grid_row
+    .grid_column.is_1
+      div .is_frac
+      div .isnt_frac
+    .grid_column.is_4
+      .is_frac 1/3  3/4  1/5  1337/5910
+      .isnt_frac 1/3  3/4  1/5  1337/5910
+
+section
+  h2 Numerators
+  .grid_row
+    .grid_column.is_1
+      div .is_numr
+      div .isnt_numr
+    .grid_column.is_1
+      .is_numr Hello 0123
+      .isnt_numr Hello 0123
+
+section
+  h2 Denominators
+  .grid_row
+    .grid_column.is_1
+      div .is_dnom
+      div .isnt_dnom
+    .grid_column.is_1
+      .is_dnom Hello 0123
+      .isnt_dnom Hello 0123
+
+section
+  h2 Superscript
+  .grid_row
+    .grid_column.is_1
+      div .is_sups
+      div .isnt_sups
+    .grid_column.is_1
+      .is_sups X0123 (+)-[=]
+      .isnt_sups X0123 (+)-[=]
+    .grid_column.is_1
+      .is_sups Xabcdefghijklmnopqrstuvwxyz
+      .isnt_sups Xabcdefghijklmnopqrstuvwxyz
+
+section
+  h2 Subscript
+  .grid_row
+    .grid_column.is_1
+      div .is_subs
+      div .isnt_subs
+    .grid_column.is_1
+      .is_subs X0123 (+)-[=]
+      .isnt_subs X0123 (+)-[=]
+    .grid_column.is_1
+      .is_subs Xabcdefghijklmnopqrstuvwxyz
+      .isnt_subs Xabcdefghijklmnopqrstuvwxyz
+
+section
+  h2 Case alternates
+  p Switches out some glyphs to work better with capital letters and numbers.
+  .grid_row
+    .grid_column.is_1
+      div .is_case
+      div .isnt_case
+    .grid_column.is_2
+      .is_case (Hello) [World] {9000}
+      .isnt_case (Hello) [World] {9000}
+    .grid_column.is_2
+      .is_case SCHOOL @ RUN
+      .isnt_case SCHOOL @ RUN
+    .grid_column.is_2
+      .is_case 3 + 9 = 12 * 1
+      .isnt_case 3 + 9 = 12 * 1
+    .grid_column.is_2
+      .is_case *+÷±×=≠≈•~<>≤≥
+      .isnt_case *+÷±×=≠≈•~<>≤≥
+    .grid_column.is_2
+      .is_case → ← ⟶ ⟵ − - – — :
+      .isnt_case → ← ⟶ ⟵ − - – — :
+
+
+section
+  h2 Stylistic set 1: Alternate digits
+  p An alternate style of digits. Note that individual digit styles can be cherry-picked using the cvXX features.
+  .grid_row
+    .grid_column.is_1
+      div .is_ss01
+      div .isnt_ss01
+    .grid_column.is_2
+      .is_ss01 1234567890
+      .isnt_ss01 1234567890
+
+section
+  h2 Stylistic set 2: Disambiguation
+  p Alternate glyph set that increases visual difference between similar-looking characters.
+  .grid_row
+    .grid_column.is_1
+      div .is_ss02
+      div .isnt_ss02
+    .grid_column.is_2
+      .is_ss02 WP0ACO9XSI1012O9
+      .isnt_ss02 WP0ACO9XSI1012O9
+    .grid_column.is_2
+      .is_ss02 Illegal
+      .isnt_ss02 Illegal
+    .grid_column.is_2
+      .is_ss02 βeta ßeta Busineß
+      .isnt_ss02 βeta ßeta Busineß
+
+section
+  h2 Stylistic set 3: r curves into round neighbors
+  p Lower case r curved into neighboring round shapes for increased legibility and personality.
+  .grid_row
+    .grid_column.is_1
+      div .is_ss03
+      div .isnt_ss03
+    .grid_column.is_2
+      .is_ss03 Sara
+      .isnt_ss03 Sara
+    .grid_column.is_2
+      .is_ss03 ird
+      .isnt_ss03 ird
+    .grid_column.is_2
+      .is_ss03 Monroe
+      .isnt_ss03 Monroe
+
+section
+  h2 Discretionary ligatures
+  p Alternate glyph set that increases visual difference between similar-looking characters.
+  .grid_row
+    .grid_column.is_1
+      div .is_dlig
+      div .isnt_dlig
+    .grid_column.is_2
+      .is_dlig ¡¿What?!
+      .isnt_dlig ¡¿What?!
+
+section
+  h2 Slashed zero
+  .grid_row
+    .grid_column.is_1
+      div .is_zero
+      div .isnt_zero
+    .grid_column.is_2
+      .is_zero O0123
+      .isnt_zero O0123

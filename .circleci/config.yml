@@ -69,7 +69,7 @@ jobs:
           name: Build dist
           command: yarn docs:build
       - save_cache:
-          key: *dist_key
+          key: *cache_key
           paths:
               - docs
 
