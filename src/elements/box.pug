@@ -1,0 +1,18 @@
+h1 Box
+
+section
+  h2 Default
+  .box
+    | Box default
+
+  - $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
+
+  h2 Box Colors
+  p
+    each $color_name in $color_themes
+      .box(class='is_' + $color_name)= $color_name
+
+  h2 Box Colors outline
+  p
+    each $color_name in $color_themes
+      .box.is_outline(class='is_' + $color_name)= $color_name

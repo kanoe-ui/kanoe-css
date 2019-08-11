@@ -1,0 +1,18 @@
+.box
+  --background-color var(--color_white)
+  --border-radius calc(var(--vertical-rhythm) / 1)
+  --color var(--color_gray)
+  --padding calc(var(--vertical-rhythm) * 2)
+  --border-color var(--color_gray_xx)
+  background-color var(--background-color)
+  border-radius var(--border-radius)
+  border var(--border-width-regular) solid var(--border-color)
+  box-shadow 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1)
+  color var(--color)
+  display block
+  padding var(--padding)
+
+  &.is_outline
+    --background-color var(--background-color-outline)
+    --border-color var(--border-color-outline)
+    --color var(--color-outline)
