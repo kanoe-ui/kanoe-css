@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.11.0...v1.12.0) (2019-08-11)
+
+
+### Features
+
+* add inter font modifiers ([82020a5](https://github.com/kanoe-ui/kanoe-css/commit/82020a5))
+
 # [1.11.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.10.0...v1.11.0) (2019-08-09)
 
 
