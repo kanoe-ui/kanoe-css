@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.12.0...v1.13.0) (2019-08-11)
+
+
+### Features
+
+* add element box ([192be14](https://github.com/kanoe-ui/kanoe-css/commit/192be14))
+
 # [1.12.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.11.0...v1.12.0) (2019-08-11)
 
 
