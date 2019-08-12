@@ -1,0 +1,71 @@
+.table
+  --border-color-vertical var(--color_gray_xxx)
+  --border-color-horizontal var(--color_gray_xxx)
+  --border-width var(--border-width-regular)
+  --color var(--color_gray)
+  --font-weight-header var(--font-weight--bold-xx)
+  --background-color var(--color_white)
+  --background-color-hover var(--color_gray_xxx_25)
+  --table-layout fixed
+  --width 100%
+  // border-spacing 5px; border-collapse is separate.
+  // caption-side top
+  // empty-cells show
+  background-color var(--background-color)
+  border-bottom 1px solid var(--border-color-horizontal)
+  border-collapse collapse
+  border-left 1px solid var(--border-color-vertical)
+  border-right 1px solid var(--border-color-vertical)
+  border-top 1px solid var(--border-color-horizontal)
+  color var(--color)
+  font-size 16px
+  font-weight normal
+  table-layout fixed
+  table-layout var(--table-layout)
+  vertical-align middle
+  width var(--width)
+
+  &.is_fluid
+    --table-layout auto
+    --width auto
+
+  &.hasnt_border
+    --border-color-vertical transparent
+
+  &.is_striped
+    tbody tr:nth-child(even)
+      background-color var(--color_gray_xxx_50)
+
+  &.is_hoverable
+    tbody tr:hover
+      background-color var(--background-color-hover)
+
+  &.is_outline
+    --background-color var(--background-color-outline)
+    --border-color-vertical var(--border-color-outline)
+    --border-color-horizontal var(--border-color-outline)
+    --color var(--color-outline)
+
+  thead
+    background-color transparent
+
+  tfoot
+    font-weight normal
+
+  tbody
+    font-weight normal
+
+  tr
+    border-bottom var(--border-width) solid var(--border-color-horizontal)
+
+  th
+    line-height calc(var(--vertical-rhythm) * 2)
+    padding calc(var(--vertical-rhythm) * 1)
+    border-right: var(--border-width) solid var(--border-color-vertical)
+    font-weight normal
+    font-weight: var(--font-weight-header)
+
+  td
+    line-height calc(var(--vertical-rhythm) * 2)
+    padding calc(var(--vertical-rhythm) * 1)
+    border-right: var(--border-width) solid var(--border-color-vertical)
