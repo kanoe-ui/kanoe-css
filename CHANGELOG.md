@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.13.0...v1.14.0) (2019-08-12)
+
+
+### Features
+
+* add table component ([923d4ea](https://github.com/kanoe-ui/kanoe-css/commit/923d4ea))
+
 # [1.13.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.12.0...v1.13.0) (2019-08-11)
 
 
