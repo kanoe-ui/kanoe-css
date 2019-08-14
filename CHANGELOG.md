@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.14.0...v1.15.0) (2019-08-14)
+
+
+### Features
+
+* add list component ([185b3be](https://github.com/kanoe-ui/kanoe-css/commit/185b3be))
+
 # [1.14.0](https://github.com/kanoe-ui/kanoe-css/compare/v1.13.0...v1.14.0) (2019-08-12)
 
 
