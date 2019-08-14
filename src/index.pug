@@ -19,12 +19,37 @@ html(lang='en')
   body
 
     .header.has_border.is_sticky
-      .grid_container
-        .header_left
-          h1.font_size--large-xxx Kanoe CSS
+      .header_left
+        h1.font_size--large-xxx Kanoe CSS
 
-    .grid_container
-      section
+    .grid_row
+      .grid_column.is_2
+        nav.nav
+          ul.list.is_plain.is_hoverable.has_border_bottom
+            li.list_item
+              a(href='#') reset
+            li.list_item
+              a(href='#') typography
+            li.list_item
+              a(href='#') font_inter
+            li.list_item
+              a(href='#') colors
+            li.list_item
+              a(href='#') grid
+            li.list_item
+              a(href='#') helpers
+            li.list_item
+              a(href='#') box
+            li.list_item
+              a(href='#') button
+            li.list_item
+              a(href='#') list
+            li.list_item
+              a(href='#') table
+            li.list_item
+              a(href='#') header
+
+      section.grid_column.is_10
         include base/mixins
         include base/reset
         include base/typography
@@ -36,6 +61,7 @@ html(lang='en')
         include elements/box
         include elements/button
 
+        include components/list
         include components/table
 
         include layout/header
