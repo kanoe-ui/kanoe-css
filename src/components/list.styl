@@ -1,0 +1,52 @@
+.list
+  --list-style-type none
+  --padding-left 0
+  --border-bottom-item 0
+  --background-color transparent
+  --color var(--color_black)
+  list-style-type var(--list-style-type)
+  margin 0
+  padding-left 0
+  list-style-position inside
+  background-color var(--background-color)
+  color var(--color)
+
+  ul&, &.is_unordered
+    --list-style-type disc
+    --padding-left 16px
+  ol&, &.is_ordered
+    --list-style-type decimal
+    --padding-left 16px
+
+  &.is_roman
+    --list-style-type upper-roman
+    --padding-left 16px
+
+  &.is_plain
+    --list-style-type none
+    --padding-left 0
+
+  &_item
+    --background-color-item transparent
+    --padding-vertical 8px
+    --color-stripe var(--color_gray_50)
+    padding var(--padding-vertical) 0
+    padding-left var(--padding-left)
+    background-color var(--background-color-item)
+    border-bottom var(--border-bottom-item) solid var(--color-stripe)
+
+    ^[0].has_border_bottom &
+      --border-bottom-item var(--border-width-regular)
+      --padding-vertical calc(8px - calc(var(--border-width-regular) / 2))
+
+    ^[0].is_striped &:nth-child(even)
+      --background-color-item var(--color_gray_25)
+      background-color var(--background-color-item)
+
+    ^[0].is_hoverable &:hover
+      --background-color-item var(--color_gray_25)
+      background-color var(--background-color-item)
+
+    ^[0].is_striped.is_hoverable &:hover
+      --background-color-item var(--color_gray_50)
+      background-color var(--background-color-item)
