@@ -71,3 +71,5 @@ mixin generateExampleBreakpoints($className, $text)
   - var $breakpoints = { mobile_s: '320px', mobile_m: '375px', mobile_l: '425px', tablet: '768px', laptop: '1024px', laptop_l: '1440px', laptop_4k: '2560px'}
   each $breakpointValue, $breakpointName in $breakpoints
     div(class=$breakpointName + '-' + $className)=$text + ' ' + $breakpointName
+
+- $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
