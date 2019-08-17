@@ -1,116 +1,125 @@
-h1 Typography
+section#typography
+  h1.font_size--large-xxx Typography
 
-section
-  h2 Suggested main font
-  p
-    | The font used in the docs, examples and in this cocumentations is the
-    a(href='https://rsms.me/inter/' target='_black') The Inter typeface family
-    | NOT included in the CSS package
+  section#typography-main-font
+    h2.font_size--large-xx Suggested main font
+    p
+      | The font used in the docs, examples and in this cocumentations is the
+      a(href='https://rsms.me/inter/' target='_black') The Inter typeface family
+      | NOT included in the CSS package
 
-  p To include the font inter Inter just add
-  pre
-    code
-      |   @import url('https://rsms.me/inter/inter.css');
-      |   :root {
-      |     --font-family-sans-serif-custom: 'Inter';
-      |   }
-      |   @supports (font-variation-settings: normal) {
-      |     :root {
-      |       --font-family-sans-serif-custom: 'Inter';
-      |     }
-      |   }
-  p Check the section `Add new font`
+    p To include the font inter Inter just add
+    pre
+      code
+        |   @import url('https://rsms.me/inter/inter.css');
+        |   :root {
+        |     --font-family-sans-serif-custom: 'Inter';
+        |   }
+        |   @supports (font-variation-settings: normal) {
+        |     :root {
+        |       --font-family-sans-serif-custom: 'Inter';
+        |     }
+        |   }
+    p Check the section `Add new font`
 
+  section#typography-font-stack
+    h2.font_size--large-xx Font stack
 
-section
-  h2 Font stack
+    h3.font_size--large-x Sans serif
+    ol.list
+      li.list-item
+        span(style='font-family: BlinkMacSystemFont') BlinkMacSystemFont
+      li.list-item
+        span(style='font-family: -apple-system') -apple-system
+      li.list-item
+        span(style='font-family: "Segoe UI"') Segoe UI
+      li.list-item
+        span(style='font-family: Roboto') Roboto
+      li.list-item
+        span(style='font-family: "Helvetica Neue"') 'Helvetica Neue'
+      li.list-item
+        span(style='font-family: Helvetica') Helvetica
+      li.list-item
+        span(style='font-family: Arial') Arial
+      li.list-item
+        span(style='font-family: sans-serif') sans-serif
 
-  h3 Sans serif
-  ol
-    li
-      span(style='font-family: BlinkMacSystemFont') BlinkMacSystemFont
-    li
-      span(style='font-family: -apple-system') -apple-system
-    li
-      span(style='font-family: "Segoe UI"') Segoe UI
-    li
-      span(style='font-family: Roboto') Roboto
-    li
-      span(style='font-family: "Helvetica Neue"') 'Helvetica Neue'
-    li
-      span(style='font-family: Helvetica') Helvetica
-    li
-      span(style='font-family: Arial') Arial
-    li
-      span(style='font-family: sans-serif') sans-serif
+    h3.font_size--large-x Monospaced
+    ol.list
+      li.list-item
+        span(style='font-family: "Consolas"') Consolas
+      li.list-item
+        span(style='font-family: "Andale Mono"') Andale Mono
+      li.list-item
+        span(style='font-family: Monaco') Monaco
+      li.list-item
+        span(style='font-family: "Courier New"') Courier New
+      li.list-item
+        span(style='font-family: Courier') Courier
+      li.list-item
+        span(style='font-family: monospace') monospace
 
-  h3 Monospaced
+    h3.font_size--large-x Add new font
+    p to add a new font in the top of the stack, load the font, from Google fonts for exaple, and add the name of the font in top of font stack with the CSS ustom property:
+    pre
+      code
+        | :root {
+        |   --font-family-sans-serif-custom: Name Font;
+        | }
+    p its important to NOT add the default sugestion from Google fonts, with the `Name Font, sans-serif`, because the `sans-serif`  will have higher priority than the rest of the default font stack.
 
-  ol
-    li
-      span(style='font-family: "Consolas"') Consolas
-    li
-      span(style='font-family: "Andale Mono"') Andale Mono
-    li
-      span(style='font-family: Monaco') Monaco
-    li
-      span(style='font-family: "Courier New"') Courier New
-    li
-      span(style='font-family: Courier') Courier
-    li
-      span(style='font-family: monospace') monospace
+  section#typography-font-sizes
+    h2.font_size--large-xx Font Sizes
+    ol.list
+      li.list-item
+        span.font_size--small-xxx .font_size--small-xxx
+      li.list-item
+        span.font_size--small-xx .font_size--small-xx
+      li.list-item
+        span.font_size--small-x .font_size--small-x
+      li.list-item
+        span.font_size--small .font_size--small
+      li.list-item
+        span.font_size--regular .font_size--regular
+      li.list-item
+        span.font_size--large .font_size--large
+      li.list-item
+        span.font_size--large-x .font_size--large-x
+      li.list-item
+        span.font_size--large-xx .font_size--large-xx
+      li.list-item
+        span.font_size--large-xxx .font_size--large-xxx
 
-  h3 Add new font
+  section#typography-title-subtitle
+    h2.font_size--large-xx Title & subtitle
+    
+    p
+      .demo
+        div.is_title .is_title
+        div.is_subtitle .is_subtitle
 
-  p to add a new font in the top of the stack, load the font, from Google fonts for exaple, and add the name of the font in top of font stack with the CSS ustom property:
-  code
-    | :root {
-    |   --font-family-sans-serif-custom: Name Font;
-    | }
-  p its important to NOT add the default sugestion from Google fonts, with the `Name Font, sans-serif`, because the `sans-serif`  will have higher priority than the rest of the default font stack.
+  section#typography-font-weights
+    h2.font_size--large-xx Font Weights
 
-section
-  h2 Font Sizes
-  p
-    .font_size--small-xxx .font_size--small-xxx
-    .font_size--small-xx .font_size--small-xx
-    .font_size--small-x .font_size--small-x
-    .font_size--small .font_size--small
-    .font_size--regular .font_size--regular
-    .font_size--large .font_size--large
-    .font_size--large-x .font_size--large-x
-    .font_size--large-xx .font_size--large-xx
-    .font_size--large-xxx .font_size--large-xxx
+    h3.font_size--large-x Absolute values
+    p
+      .font_weight--light-xxx .font_weight--light-xxx .font_weight--thin
+      .font_weight--light-xx .font_weight--light-xx .font_weight--extra-light .font_weight--light-extra
+      .font_weight--light-x .font_weight--light-x .font_weight--light
+      .font_weight--regular .font_weight--regular .font_weight--normal
+      .font_weight--bold-x .font_weight--bold-x .font_weight--medium
+      .font_weight--bold-xx .font_weight--bold-xx .font_weight--semi-bold
+      .font_weight--bold-xxx .font_weight--bold-xxx .font_weight--bold
+      .font_weight--bold-xxxx .font_weight--bold-xxxx .font_weight--extra-bold
+      .font_weight--bold-xxxx .font_weight--bold-xxxx .font_weight--black
 
-section
-  h2 Title & subtitle
-  p
-  .demo
-    div.is_title .is_title
-    div.is_subtitle .is_subtitle
+    h3.font_size--large-x Relative values
+    p
+      .font_weight--lighter .font_weight--lighter
+      .font_weight--bolder .font_weight--bolder
 
-section
-  h2 Font Weights
-
-  h2 Absolute values
-  p
-    .font_weight--light-xxx .font_weight--light-xxx .font_weight--thin
-    .font_weight--light-xx .font_weight--light-xx .font_weight--extra-light .font_weight--light-extra
-    .font_weight--light-x .font_weight--light-x .font_weight--light
-    .font_weight--regular .font_weight--regular .font_weight--normal
-    .font_weight--bold-x .font_weight--bold-x .font_weight--medium
-    .font_weight--bold-xx .font_weight--bold-xx .font_weight--semi-bold
-    .font_weight--bold-xxx .font_weight--bold-xxx .font_weight--bold
-    .font_weight--bold-xxxx .font_weight--bold-xxxx .font_weight--extra-bold
-    .font_weight--bold-xxxx .font_weight--bold-xxxx .font_weight--black
-
-  h2 Relative values
-  p
-    .font_weight--lighter .font_weight--lighter
-    .font_weight--bolder .font_weight--bolder
-
-section
-  h2 Font Styles
-  p
-    .font_style--normal .font_style--normal
-    .font_style--italic .font_style--italic
+  section#typography-font-styles
+    h3.font_size--large-x Font Styles
+    p
+      .font_style--normal .font_style--normal
+      .font_style--italic .font_style--italic
