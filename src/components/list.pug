@@ -1,71 +1,63 @@
-section
-  header
-    h1 List
+section#list
+  h1.font_size--large-xxx List
 
-  h2 Default
-
-  .grid_row
-    .grid_column.is_4
-      p Only classes
-      .list
-        .list_item .list_item 1
-        .list_item .list_item 2
-        .list_item .list_item 3
-    .grid_column.is_4
-      p UL tag
-      ul.list
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-    .grid_column.is_4
-      p OL tag
-      ol.list
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-    .grid_column.is_4
-      p OL or UL tag is_plain
-      ol.list.is_plain
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-    .grid_column.is_4
-      p has_border_bottom
-      ul.list.has_border_bottom
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-
-    .grid_column.is_4
-      p is_hoverable
-      ul.list.is_hoverable
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-
-    .grid_column.is_4
-      p is_striped
-      ul.list.is_striped
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-
-    .grid_column.is_4
-      p is_striped + is_hoverable
-      ul.list.is_striped.is_hoverable
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-
-    .grid_column.is_4
-      p is_striped + is_hoverable + has_border_bottom
-      ul.list.is_striped.is_hoverable.has_border_bottom
-        li.list_item .list_item 1
-        li.list_item .list_item 2
-        li.list_item .list_item 3
-
-
-
+  section#list-default
+    h2.font_size--large-xx List Default
+    .grid_row
+      .grid_column.is_4
+        p Only classes
+        .list
+          .list_item .list_item 1
+          .list_item .list_item 2
+          .list_item .list_item 3
+      .grid_column.is_4
+        p UL tag
+        ul.list
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p OL tag
+        ol.list
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p OL or UL tag is_plain
+        ol.list.is_plain
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p has_border_bottom
+        ul.list.has_border_bottom
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p is_hoverable
+        ul.list.is_hoverable
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p is_striped
+        ul.list.is_striped
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p is_striped + is_hoverable
+        ul.list.is_striped.is_hoverable
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
+      .grid_column.is_4
+        p is_striped + is_hoverable + has_border_bottom
+        ul.list.is_striped.is_hoverable.has_border_bottom
+          li.list_item .list_item 1
+          li.list_item .list_item 2
+          li.list_item .list_item 3
     .grid_column.is_4
       p Roman count
       ol.list.is_roman
@@ -90,16 +82,14 @@ section
         li.list_item() .list_item 1
         li.list_item() .list_item 2
         li.list_item() .list_item 3
-
-- $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
-section
-  h2 Solid Colors
-
-  .grid_row
-    each $color_name in $color_themes
-      .grid_column.is_3
-        p=$color_name
-        ul.list.has_border_bottom(class='is_' + $color_name)
-          li.list_item .list_item 1
-          li.list_item .list_item 2
-          li.list_item .list_item 3
+  
+  section#list-colors
+    h2.font_size--large-xx List Default
+    .grid_row
+      each $color_name in $color_themes
+        .grid_column.is_3
+          p=$color_name
+          ul.list.has_border_bottom(class='is_' + $color_name)
+            li.list_item .list_item 1
+            li.list_item .list_item 2
+            li.list_item .list_item 3
