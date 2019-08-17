@@ -1,173 +1,165 @@
-h1 Table
+section#table
+  h1.font_size--large-xxx Table
 
-section
-  h2 Default
+  section#table-default
+    h2.font_size--large-xx Table Default
+    table.table
+      thead
+        tr
+          th(colspan='2') The table header
+          th header column
+      tbody
+        tr
+          th Row header 1
+          td data 1
+          td data 2
+        tr
+          th Row header 2
+          td data 3
+          td data 4
 
-  table.table
-    thead
-      tr
-        th(colspan='2') The table header
-        th header column
-    tbody
-      tr
-        th Row header 1
-        td data 1
-        td data 2
-      tr
-        th Row header 2
-        td data 3
-        td data 4
+  section#table-fluid
+    h2.font_size--large-xx Fluid width
+    table.table.is_fluid
+      thead
+        tr
+          th(colspan='2') The table header
+          th header column
+      tbody
+        tr
+          th Row header 1
+          td data 1
+          td data 2
+        tr
+          th Row header 2
+          td data 3
+          td data 4
 
-section
-  h2 Fluid width
+  section#table-without-border
+    h2.font_size--large-xx Without border
+    table.table.hasnt_border
+      thead
+        tr
+          th(colspan='2') The table header
+          th header column
+      tbody
+        tr
+          th Row header 1
+          td data 1
+          td data 2
+        tr
+          th Row header 2
+          td data 3
+          td data 4
 
-  table.table.is_fluid
-    thead
-      tr
-        th(colspan='2') The table header
-        th header column
-    tbody
-      tr
-        th Row header 1
-        td data 1
-        td data 2
-      tr
-        th Row header 2
-        td data 3
-        td data 4
+  section#table-striped
+    h2.font_size--large-xx Striped
+    table.table.is_striped
+      thead
+        tr
+          th(colspan='2') The table header
+          th header column
+      tbody
+        tr
+          th Row header 1
+          td data 1
+          td data 2
+        tr
+          th Row header 2
+          td data 3
+          td data 4
+        tr
+          th Row header 3
+          td data 5
+          td data 6
+        tr
+          th Row header 4
+          td data 7
+          td data 8
 
-section
-  h2 Without border
+  section#table-hoverable
+    h2.font_size--large-xx Hoverable
+    table.table.is_hoverable
+      thead
+        tr
+          th(colspan='2') The table header
+          th header column
+      tbody
+        tr
+          th Row header 1
+          td data 1
+          td data 2
+        tr
+          th Row header 2
+          td data 3
+          td data 4
+        tr
+          th Row header 3
+          td data 5
+          td data 6
+        tr
+          th Row header 4
+          td data 7
+          td data 8
 
-  table.table.hasnt_border
-    thead
-      tr
-        th(colspan='2') The table header
-        th header column
-    tbody
-      tr
-        th Row header 1
-        td data 1
-        td data 2
-      tr
-        th Row header 2
-        td data 3
-        td data 4
+  section#table-color-per-row
+    h2.font_size--large-xx Color per row
+    table.table.is_hoverable
+      thead
+        tr
+          th(colspan='2') The table header
+          th header column
+      tbody
+        tr
+          th Row header 1
+          td data 1
+          td data 2
+        tr.is_red
+          th Row header 2
+          td data 3
+          td data 4
+        tr
+          th Row header 3
+          td data 5
+          td data 6
+        tr
+          th Row header 4
+          td data 7
+          td data 8
 
-section
-  h2 Striped
-
-  table.table.is_striped
-    thead
-      tr
-        th(colspan='2') The table header
-        th header column
-    tbody
-      tr
-        th Row header 1
-        td data 1
-        td data 2
-      tr
-        th Row header 2
-        td data 3
-        td data 4
-      tr
-        th Row header 3
-        td data 5
-        td data 6
-      tr
-        th Row header 4
-        td data 7
-        td data 8
-
-section
-  h2 Hoverable
-
-  table.table.is_hoverable
-    thead
-      tr
-        th(colspan='2') The table header
-        th header column
-    tbody
-      tr
-        th Row header 1
-        td data 1
-        td data 2
-      tr
-        th Row header 2
-        td data 3
-        td data 4
-      tr
-        th Row header 3
-        td data 5
-        td data 6
-      tr
-        th Row header 4
-        td data 7
-        td data 8
-
-section
-  h2 Color per line
-
-  table.table.is_hoverable
-    thead
-      tr
-        th(colspan='2') The table header
-        th header column
-    tbody
-      tr
-        th Row header 1
-        td data 1
-        td data 2
-      tr.is_red
-        th Row header 2
-        td data 3
-        td data 4
-      tr
-        th Row header 3
-        td data 5
-        td data 6
-      tr
-        th Row header 4
-        td data 7
-        td data 8
-
-- $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
-section
-  h2 Solid Colors
-
-  each $color_name in $color_themes
-    p
-      table.table.is_hoverable(class='is_' + $color_name)
-        thead
-          tr
-            th(colspan='2')= $color_name
-            th header column
-        tbody
-          tr
-            th Row header 1
-            td data 1
-            td data 2
-          tr
-            th Row header 2
-            td data 3
-            td data 4
-section
-  h2 Outline Colors
-
-  each $color_name in $color_themes
-    p
-      table.table.is_outline.is_hoverable(class='is_' + $color_name)
-        thead
-          tr
-            th(colspan='2')= $color_name
-            th header column
-        tbody
-          tr
-            th Row header 1
-            td data 1
-            td data 2
-          tr
-            th Row header 2
-            td data 3
-            td data 4
+  section#table-solid-colors
+    h2.font_size--large-xx Solid Colors
+    each $color_name in $color_themes
+      p
+        table.table.is_hoverable(class='is_' + $color_name)
+          thead
+            tr
+              th(colspan='2')= $color_name
+              th header column
+          tbody
+            tr
+              th Row header 1
+              td data 1
+              td data 2
+            tr
+              th Row header 2
+              td data 3
+              td data 4
+  section#table-outline-colors
+    h2.font_size--large-xx Outline Colors
+    each $color_name in $color_themes
+      p
+        table.table.is_outline.is_hoverable(class='is_' + $color_name)
+          thead
+            tr
+              th(colspan='2')= $color_name
+              th header column
+          tbody
+            tr
+              th Row header 1
+              td data 1
+              td data 2
+            tr
+              th Row header 2
+              td data 3
+              td data 4
