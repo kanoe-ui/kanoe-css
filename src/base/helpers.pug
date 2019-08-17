@@ -1,28 +1,24 @@
-section
-  h1 Helpers
+section#helpers
+  h1.font_size--large-xxx Helpers
 
-  section
-    h2 Height
+  section#helpers-height
+    h2.font_size--large-xx Height
     p to set the height of a element, add the class `.has_height_NUMBER`, between 1 and 20.
     p each number will add 1 line, 16 px
-
     .demo_grid
       +gridRow({additionalClass: 'has_height_5'})
         | content
-
-  section
-    h2 Hidden
+  
+  section#helpers-hidden
+    h2.font_size--large-xx Hidden
     p hide a element with `display: block`
-
     +generateExampleBreakpoints('is_hidden', 'Hidden from')
-
-  section
-    h2 Invisible
+  
+  section#helpers-invisible-visible
+    h2.font_size--large-xx Invisible
     p hide a element with `visibility: hidden`
-
     +generateExampleBreakpoints('is_invisible', 'Invisible from')
 
-    h2 Visible
+    h2.font_size--large-xx Visible
     p show a element with `visibility: visible`
-
     +generateExampleBreakpoints('is_visible', 'Visible from')
