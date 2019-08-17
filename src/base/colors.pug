@@ -1,25 +1,24 @@
-- $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
+section#colors
+  h1.font_size--large-xxx Colors
+  
+  section#colors-base
+    h2.font_size--large-xx Base
+    .grid_row
+      each $color_name in $color_themes
+        .grid_column
+          div(style='background: var(--color_' + $color_name +')' )= $color_name
 
-h1 Colors
+    .grid_row
+      each $color_name in $color_themes
+        .grid_column
+          div(style='background: var(--color_' + $color_name +'_75)' )= $color_name
 
-section
-  h2 Base
-  .grid_row
-    each $color_name in $color_themes
-      .grid_column
-        div(style='background: var(--color_' + $color_name +')' )= $color_name
+    .grid_row
+      each $color_name in $color_themes
+        .grid_column
+          div(style='background: var(--color_' + $color_name +'_50)' )= $color_name
 
-  .grid_row
-    each $color_name in $color_themes
-      .grid_column
-        div(style='background: var(--color_' + $color_name +'_75)' )= $color_name
-
-  .grid_row
-    each $color_name in $color_themes
-      .grid_column
-        div(style='background: var(--color_' + $color_name +'_50)' )= $color_name
-
-  .grid_row
-    each $color_name in $color_themes
-      .grid_column
-        div(style='background: var(--color_' + $color_name +'_25)' )= $color_name
+    .grid_row
+      each $color_name in $color_themes
+        .grid_column
+          div(style='background: var(--color_' + $color_name +'_25)' )= $color_name
