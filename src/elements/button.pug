@@ -1,34 +1,39 @@
-h1 Button
+section#button
+  h1.font_size--large-xxx Button
 
-section
-  h2 Default
-  p
-    span.button .button
-    button.button(disabled) .button or
-    span.button.is_outline .button 1
+  section#button-default
+    h2.font_size--large-xx Button Default
+    p
+      span.button .button
+      button.button(disabled) .button or
+      span.button.is_outline .button 1
 
-  - $color_themes = ['black', 'gray', 'gray_x', 'gray_xx', 'gray_xxx', 'white', 'red', 'green', 'blue', 'orange', 'violet', 'yellow']
-  h2 Colors
-  p
-    each $color_name in $color_themes
-      button.button(class='is_' + $color_name)= $color_name
+  section#button-colors
+    h2.font_size--large-xx Button Colors
+    p
+      each $color_name in $color_themes
+        button.button(class='is_' + $color_name)= $color_name
 
-  h2 Disabled
-  p
-    each $color_name in $color_themes
-      button.button.is_disabled(class='is_' + $color_name)= $color_name
+  section#button-disabled
+    h2.font_size--large-xx Button Disabled
+    p
+      each $color_name in $color_themes
+        button.button.is_disabled(class='is_' + $color_name)= $color_name
 
-  h2 Outline
-  p
-    each $color_name in $color_themes
-      button.button.is_outline(class='is_' + $color_name)= $color_name
+  section#button-outline
+    h2.font_size--large-xx Button Outline
+    p
+      each $color_name in $color_themes
+        button.button.is_outline(class='is_' + $color_name)= $color_name
 
-  h2 Focus
-  p
-    each $color_name in $color_themes
-      button.button.is_focused(class='is_' + $color_name)= $color_name
+  section#button-focus
+    h2.font_size--large-xx Button Focus
+    p
+      each $color_name in $color_themes
+        button.button.is_focused(class='is_' + $color_name)= $color_name
 
-  h2 Active
-  p
-    each $color_name in $color_themes
-      span.button.is_active(class='is_' + $color_name)= $color_name
+  section#button-active
+    h2.font_size--large-xx Button Active
+    p
+      each $color_name in $color_themes
+        span.button.is_active(class='is_' + $color_name)= $color_name
