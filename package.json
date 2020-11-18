@@ -40,7 +40,7 @@
     "pug-cli": "^1.0.0-alpha6",
     "pug-lint": "^2.6.0",
     "rupture": "^0.7.1",
-    "semantic-release": "^15.13.18",
+    "semantic-release": "^17.2.3",
     "stylint": "^2.0.0",
     "stylint-stylish": "^2.0.0",
     "stylus": "^0.54.5",
