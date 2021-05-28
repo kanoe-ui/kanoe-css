@@ -1,7 +1,7 @@
 {
-  "name": "kanoe-template-parcel-pug-stylus",
+  "name": "kanoe-css",
   "version": "0.0.0",
-  "description": "Template with Parcel, Pug and Stylus",
+  "description": "CSS framework",
   "scripts": {
     "start": "parcel serve ./src/index.pug",
     "build": "parcel build ./src/index.pug",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kanoe-ui/kanoe-template-parcel-pug-stylus.git"
+    "url": "git+https://github.com/kanoe-ui/kanoe-css.git"
   },
   "author": "Luiz Tanure",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kanoe-ui/kanoe-template-parcel-pug-stylus/issues"
+    "url": "https://github.com/kanoe-ui/kanoe-css/issues"
   },
-  "homepage": "https://github.com/kanoe-ui/kanoe-template-parcel-pug-stylus#readme",
+  "homepage": "https://github.com/kanoe-ui/kanoe-css#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
@@ -38,8 +38,10 @@
     "onchange": "^7.1.0",
     "parcel": "^2.0.0-beta.3.1",
     "prettier": "^2.3.0",
+    "pug": "^3.0.2",
     "stylint": "^2.0.0",
-    "stylus-supremacy": "^2.15.0"
+    "stylus-supremacy": "^2.15.0",
+    "typescript": "^4.3.2"
   },
   "lint-staged": {
     "*.{js,ts,css,styl,pug,md}": "npm run lint:all"
