@@ -5,6 +5,7 @@
   "scripts": {
     "start": "parcel serve ./src/index.pug",
     "build": "parcel build ./src/index.pug",
+    "test": "npm run lint:all",
     "lint:all": "npm run stylus:lint && npm run prettier:check:all",
     "watch:all": "npm run prettier:watch & npm run stylus:watch",
     "prettier:watch": "onchange \"**/*\" -- npm run prettier:fix:file --file={{changed}}",
@@ -15,7 +16,8 @@
     "stylus:fix:file": "stylus-supremacy format $npm_config_file --replace --options .stylintrc",
     "stylus:fix:all": "npm run stylus:fix:file --file=./src/**/*.styl",
     "stylus:lint": "stylint --config .stylintrc $npm_config_file",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "parcel": "^2.0.0-beta.3.1",
     "prettier": "^2.3.0",
     "pug": "^3.0.2",
+    "semantic-release": "^17.4.3",
     "stylint": "^2.0.0",
     "stylus-supremacy": "^2.15.0",
     "typescript": "^4.3.2"
