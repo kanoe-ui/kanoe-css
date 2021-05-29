@@ -1,6 +1,8 @@
-# Kanoe template
+# Kanoe CSS
 
-Simple basic project using:
+CSS framework
+
+## Built with
 
 - [Parcel](https://github.com/parcel-bundler/parcel)
 - [PUG](https://github.com/pugjs/pug)
