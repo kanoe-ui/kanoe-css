@@ -1,6 +1,6 @@
 {
   "name": "kanoe-css",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "CSS framework",
   "scripts": {
     "start": "parcel serve ./src/index.pug",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kanoe-ui/kanoe-css.git"
+    "url": "https://github.com/kanoe-ui/kanoe-css.git"
   },
   "author": "Luiz Tanure",
   "license": "MIT",
