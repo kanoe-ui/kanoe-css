@@ -1,0 +1,20 @@
+extends ../../_layout.pug
+
+block head
+  link(
+    href="./typography.styl"
+    rel="stylesheet"
+  )
+
+block content
+  - var $block = config.font
+
+  h1 Typography
+
+  each modifier, key in $block.modifiers
+    h2= modifier.name
+
+    ul
+      each options, key in modifier.options
+        li=$block.name + modifier.name + options.name
+

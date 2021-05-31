@@ -1,0 +1,26 @@
+@import('../../_scripts/index.styl')
+
+$configBlock = $config.font
+
+$blockName = $configBlock.name
+
+$modifiers = $configBlock.modifiers
+
+// Font global variables
+:root
+  for $index, $modifier in $modifiers
+    for $index, $option in $modifier.options
+      {customPropName($blockName, ($modifier.name $option.name))} $option.value
+
+// Font base
+[class*={$blockName}]
+  for $index, $modifier in $modifiers
+    {customPropName($blockName, ($modifier.name))} getDefaultCustomPropName($blockName, $modifier)
+  font-size customPropNameVar($blockName, ($modifiers.size.name))
+  font-weight customPropNameVar($blockName, ($modifiers.weight.name))
+
+// Font modifiers
+for $index, $modifier in $modifiers
+  for $index, $option in $modifier.options
+    .{className($blockName, '', ($modifier.name $option.name))}
+      {customPropName($blockName, ($modifier.name))} customPropNameVar($blockName, ($modifier.name $option.name))
