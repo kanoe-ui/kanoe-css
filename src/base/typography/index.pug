@@ -7,7 +7,7 @@ block head
   )
 
 block content
-  - var $block = config.font
+  - var $block = config.font;
 
   h1 Typography
 
@@ -16,5 +16,4 @@ block content
 
     ul
       each options, key in modifier.options
-        li=$block.name + modifier.name + options.name
-
+        li= $block.name + modifier.name + options.name

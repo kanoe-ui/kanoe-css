@@ -1,7 +1,7 @@
-const config = require("./_scripts/token.json");
+const config = require('./_scripts/token.json');
 
 module.exports = {
   locals: {
-    config
-  }
+    config,
+  },
 };
