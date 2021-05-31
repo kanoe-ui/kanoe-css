@@ -3,8 +3,8 @@
   "version": "0.0.0-development",
   "description": "CSS framework",
   "scripts": {
-    "start": "parcel serve ./src/index.pug",
-    "build": "parcel build ./src/index.pug",
+    "start": "parcel serve ./src/**/index.pug",
+    "build": "parcel build ./src/**/*.pug",
     "test": "npm run lint:all",
     "lint:all": "npm run stylus:lint && npm run prettier:check:all",
     "watch:all": "npm run prettier:watch & npm run stylus:watch",
@@ -48,5 +48,8 @@
   },
   "lint-staged": {
     "*.{js,ts,css,styl,pug,md}": "npm run lint:all"
+  },
+  "alias": {
+    "@config": "./src/config"
   }
 }
