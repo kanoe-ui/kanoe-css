@@ -1,0 +1,32 @@
+// $config = json('./token.json', { hash: true }, '$')
+
+$preffix = '' + $config.preffix
+
+className($blockName, $element = '', $modifiers = '')
+  $name = $preffix + replace(' ', '_', '' + $blockName)
+  if($element != '')
+    $name += $config.separators.element + replace(' ', '_', '' + $element)
+  if($modifiers != '')
+    for $modifier in $modifiers
+      $name += $config.separators.modifier + replace(' ', '_', '' + $modifier)
+  $name
+
+customPropName($blockName, $modifiers = '')
+  $name = '--' + replace(' ', '_', $blockName)
+  if($modifiers != '')
+    for $modifier in $modifiers
+      $name += $config.separators.customProperty + replace(' ', '_', '' + $modifier)
+  $name
+
+customPropNameVar($blockName, $modifiers = '')
+  var(customPropName($blockName, $modifiers))
+
+customProp($blockName, $modifiers = '', $value)
+  {customPropName($blockName, $modifiers)} $value
+
+getDefaultCustomPropName($blockName, $modifier)
+  $result = ''
+  for $index, $option in $modifier.options
+    if($option.default)
+      $result = var(customPropName($blockName, ($modifier.name $option.name)))
+  $result
