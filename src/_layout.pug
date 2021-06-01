@@ -4,7 +4,20 @@ html
     meta(charset="utf-8")
     title Kanoe UI - #{ title }
     block head
+    link(
+      href="/src/_docs.styl"
+      rel="stylesheet"
+    )
+    link(
+      href="/src/index.styl"
+      rel="stylesheet"
+    )
 
-  body
+  body.doc_grid_bg.doc_hover
+    nav
+      ul.list
+        each item, key in locale
+          li
+            a(href=item.url)= item.name
     block content
       h1 #{ title }
