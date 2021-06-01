@@ -3,7 +3,9 @@
   "version": "0.0.0-development",
   "description": "CSS framework",
   "scripts": {
-    "start": "parcel serve ./src/**/index.pug",
+    "clean": "rm -rf .parcel-cache/ dist/",
+    "start": "npm run clean; npm run serve",
+    "serve": "parcel serve ./src/**/index.pug",
     "build": "parcel build ./src/**/index.pug",
     "test": "npm run lint:all",
     "lint:all": "npm run stylus:lint && npm run prettier:check:all",
@@ -48,8 +50,5 @@
   },
   "lint-staged": {
     "*.{js,ts,css,styl,pug,md}": "npm run test"
-  },
-  "alias": {
-    "@config": "./src/config"
   }
 }
