@@ -7,13 +7,18 @@ block head
   )
 
 block content
-  - var $block = config.font;
+  - var $t = locale.typography;
+  - var $fn = locals.fn;
 
-  h1 Typography
+  h1= $t.name
+
+  - var $block = config.font;
 
   each modifier, key in $block.modifiers
     h2= modifier.name
 
     ul
       each options, key in modifier.options
-        li= $block.name + modifier.name + options.name
+        li
+          - var classModifier = $fn.className($block.name, '', modifier.name, options.name);
+          span(class=classModifier)= $t.pangram

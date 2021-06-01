@@ -1,0 +1,102 @@
+@import ('../../_scripts/index.styl')
+
+$configBlock = $config.font
+$blockName = $configBlock.name
+$modifiers = $configBlock.modifiers
+
+// Font global variables
+:root
+  --grid-base $config.grid.base
+  for $index, $modifier in $modifiers
+    for $index, $option in $modifier.options
+      {customPropName($blockName, $modifier.name ($option.name))}: $option.value
+  for $index, $option in $modifiers.size.options
+    --line-height-{$option.name} ceil(($option.value + ($config.grid.base / 1)) /  $config.grid.base) *  $config.grid.base
+
+// Font base
+[class*={$blockName}]
+  for $index, $modifier in $modifiers
+    {customPropName($blockName, ($modifier.name))} getDefaultCustomPropName($blockName, $modifier)
+
+  font-size customPropNameVar($blockName, ($modifiers.size.name))
+  font-style customPropNameVar($blockName, ($modifiers.style.name))
+  font-weight customPropNameVar($blockName, ($modifiers.weight.name))
+  line-height: var(--line-height)
+
+// Font size
+for $index, $option in $modifiers.size.options
+  .{className($blockName, '', $modifiers.size.name ($option.name))}
+    {customPropName($blockName, ($modifiers.size.name))} customPropNameVar($blockName, $modifiers.size.name ($option.name))
+    --line-height: s('var(--line-height-%s)', $option.name)
+
+// Font weight
+for $index, $option in $modifiers.weight.options
+  .{className($blockName, '', $modifiers.weight.name ($option.name))}
+    {customPropName($blockName, ($modifiers.weight.name))} customPropNameVar($blockName, $modifiers.weight.name ($option.name))
+
+// Font style
+for $index, $option in $modifiers.style.options
+  .{className($blockName, '', $modifiers.style.name ($option.name))}
+    {customPropName($blockName, ($modifiers.style.name))} customPropNameVar($blockName, $modifiers.style.name ($option.name))
+
+html
+  s('@import url("https://rsms.me/inter/inter.cs");', $option.name)
+  // var(--line-height-%s)
+:root {
+  --font-family-sans-serif-custom 'Inter'
+}
+@supports (font-variation-settings: normal)
+  :root
+    --font-family-sans-serif-custom 'Inter'
+
+body
+  // font-family var(--font-family)
+  font-family var(--font-family-sans-serif-custom)
+  // font-size var(--font-size--regular)
+
+.list
+  --font-size var(--font-size-default)
+  --line-height var(--line-height-default)
+  font-size var(--font-size)
+  line-height var(--line-height)
+  margin var(--grid-base) 0
+  padding 0 0 0 calc(var(--grid-base) * 3)
+
+  li
+    margin 0
+
+    &::marker
+      color red
+      font-size var(--font-size-default)
+      width 16px
+
+[class*='title']
+  --font-size var(--font-size-default)
+  --line-height var(--line-height-default)
+  font-size var(--font-size)
+  line-height var(--line-height)
+  margin 0 0 var(--line-height)
+
+.title
+  &--h1
+    --font-size var(--font-size-large)
+    --line-height var(--line-height-large)
+  &--h2
+    --font-size var(--font-size-default)
+    --line-height var(--line-height-default)
+
+
+// h1, h2
+//   margin 0
+//   font-size: var(--font-size-default)
+//   line-height: var(--line-height-default)
+// ol, ul
+//   margin 0
+
+//   margin-block-start: 16px;
+//   margin-block-end 16px
+//   padding-inline-start: 16px
+
+//   li
+
+
