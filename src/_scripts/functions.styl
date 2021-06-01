@@ -11,7 +11,7 @@ className($blockName, $element = '', $modifiers = '')
     for $modifier in $modifiers
       $name += $config.separators.modifier + replace(' ', '_', '' + $modifier)
 
-  $name
+  unquote($name)
 
 customPropName($blockName, $modifiers = '')
   $name = '--' + replace(' ', '_', $blockName)
@@ -20,7 +20,7 @@ customPropName($blockName, $modifiers = '')
     for $modifier in $modifiers
       $name += $config.separators.customProperty + replace(' ', '_', '' + $modifier)
 
-  $name
+  unquote($name)
 
 customPropNameVar($blockName, $modifiers = '')
   var(customPropName($blockName, $modifiers))
