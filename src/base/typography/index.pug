@@ -17,8 +17,15 @@ block content
   each modifier, key in $block.modifiers
     h2= modifier.name
 
-    ul
+    table
+      thead
+        tr
+          th class
+          th example
       each options, key in modifier.options
-        li
-          - var classModifier = $fn.className($block.name, '', modifier.name, options.name);
-          span(class=classModifier)= $t.pangram
+        - var classModifier = $fn.className($block.name, '', modifier.name, options.name);
+        tr
+          td
+            pre= classModifier
+          td
+            span(class=classModifier)= $t.pangram

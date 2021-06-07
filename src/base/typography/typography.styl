@@ -1,10 +1,13 @@
 @import ('_scripts/index.styl')
 
+importFonts()
+
 :root
   customPropAll('font')
 
 [class*={className('font')}]
   customPropBaseNameValueAll('font')
+  font-family: var(customPropBaseName('font', 'family'))
   font-size var(customPropBaseName('font', 'size'))
   font-style var(customPropBaseName('font', 'style'))
   font-weight var(customPropBaseName('font', 'weight'))

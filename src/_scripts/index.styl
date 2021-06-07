@@ -1,6 +1,11 @@
 $config = json('./token.json', { hash: true }, '$')
 use('functions.js')
 
+importFonts()
+  $externalFonts = extFonts()
+  for $fontUrl in $externalFonts
+    s("@import url('%s');", unquote($fontUrl))
+
 customPropBaseName($blockKey, $modifierKey)
   unquote(cpBase($blockKey, $modifierKey))
 

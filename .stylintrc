@@ -8,7 +8,7 @@
   "cssLiteral": { "expect": "never", "error": true },
   "customProperties": { "expect": [], "error": true },
   "depthLimit": { "expect": 4, "error": true },
-  "duplicates": { "expect": true, "error": true },
+  "duplicates": { "expect": true, "error": false },
   "efficient": { "expect": "always", "error": true },
   "exclude": ["node_modules/**/*"],
   "extendPref": { "expect": "@extends", "error": true },

@@ -1,5 +1,9 @@
 const $config = require('./token.json');
 
+const externalFonts = () => {
+  return $config.externalFonts;
+};
+
 const getBlockConfig = (blockKey) => {
   if ($config[blockKey]) {
     return $config[blockKey];
@@ -125,6 +129,11 @@ exports.functions = {
 
 var plugin = function () {
   return (style) => {
+    externalFonts;
+    style.define('extFonts', (blockKey, modifierKey) => {
+      return externalFonts();
+    });
+
     style.define('cpBase', (blockKey, modifierKey) => {
       return customPropBase(
         blockKey.string,
