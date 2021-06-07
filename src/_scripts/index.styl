@@ -1,3 +1,35 @@
 $config = json('./token.json', { hash: true }, '$')
+use('functions.js')
 
-@import ('./functions.styl')
+customPropBaseName($blockKey, $modifierKey)
+  unquote(cpBase($blockKey, $modifierKey))
+
+customPropBaseVar($blockKey, $modifierKey)
+  var(unquote(cpBaseValue($blockKey, $modifierKey)))
+
+customPropBaseNameValue($blockKey, $modifierKey)
+  {customPropBaseName($blockKey, $modifierKey)} customPropBaseVar($blockKey, $modifierKey)
+
+customPropBaseNameValueAll($blockKey)
+  for $modifierKey, $modifierConfig in $config[$blockKey].modifiers
+    customPropBaseNameValue($blockKey, $modifierKey)
+
+customPropNameValue($blockKey, $modifierKey, $optionName)
+  {cpName($blockKey, $modifierKey, $optionName)} unquote(cpValue($blockKey, $modifierKey, $optionName))
+
+customPropAll($blockKey)
+  for $modifierKey, $modifierConfig in $config[$blockKey].modifiers
+    for $optionIndex, $optionConfig  in $modifierConfig.options
+      customPropNameValue($blockKey, $modifierKey, $optionConfig.name)
+
+className($blockKey, $elementKey = false, $modifierKey = false, $optionName = false)
+  {getClassName($blockKey, $elementKey, $modifierKey, $optionName)}
+
+customPropVar($blockKey, $modifierKey, $optionName)
+  var(unquote(cpName($blockKey, $modifierKey, $optionName)))
+
+classNameModifierAll($blockKey)
+  for $modifierKey, $modifierConfig in $config[$blockKey].modifiers
+    for $optionIndex, $optionConfig  in $modifierConfig.options
+      .{className($blockKey, false, $modifierKey, $optionConfig.name)}
+        {customPropBaseName($blockKey, $modifierKey)} customPropVar($blockKey, $modifierKey, $optionConfig.name)
