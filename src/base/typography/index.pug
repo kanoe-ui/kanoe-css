@@ -1,12 +1,7 @@
 extends ../../_layout.pug
 
-block head
-  link(
-    href="./typography.styl"
-    rel="stylesheet"
-  )
-
 block content
+  - var $tg = locale.general;
   - var $t = locale.typography;
   - var $fn = locals.fn;
 
@@ -14,18 +9,33 @@ block content
 
   - var $block = config.font;
 
-  each modifier, key in $block.modifiers
-    h2= modifier.name
+  each modifierConfig, modifierKey in $block.modifiers
+    - var hasExampleDisabled = ['features'].includes(modifierKey);
+
+    h2= modifierConfig.name
 
     table
       thead
         tr
-          th class
-          th example
-      each options, key in modifier.options
-        - var classModifier = $fn.className($block.name, '', modifier.name, options.name);
-        tr
-          td
-            pre= classModifier
-          td
-            span(class=classModifier)= $t.pangram
+          th= $tg.class
+          th= $tg.states.enabled
+          if (hasExampleDisabled)
+            th= $tg.states.disabled
+      tbody
+        each optionConfig, optionIndex in modifierConfig.options
+          - var classModifier = $fn.className($block.name, '', modifierConfig.name, optionConfig.name);
+          - var examples = $fn.getExamples($t, 'font', modifierKey, optionConfig.value);
+          tr
+            td
+              pre= classModifier
+            td
+              if examples && examples[0]
+                each example, exampleIndex in examples
+                  span(class=classModifier)= example
+              else
+                span(class=classModifier)= $t.pangram
+            if (hasExampleDisabled)
+              td
+                if examples && examples[0]
+                  each example, exampleIndex in examples
+                    span.font= example

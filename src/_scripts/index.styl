@@ -1,10 +1,13 @@
 $config = json('./token.json', { hash: true }, '$')
 use('functions.js')
 
+joinCustomProps($blockKey, $modifierKey)
+  cpJoin($blockKey, $modifierKey)
+
 importFonts()
   $externalFonts = extFonts()
   for $fontUrl in $externalFonts
-    s("@import url('%s');", unquote($fontUrl))
+    s('@import url("%s");', unquote($fontUrl))
 
 customPropBaseName($blockKey, $modifierKey)
   unquote(cpBase($blockKey, $modifierKey))
@@ -19,13 +22,16 @@ customPropBaseNameValueAll($blockKey)
   for $modifierKey, $modifierConfig in $config[$blockKey].modifiers
     customPropBaseNameValue($blockKey, $modifierKey)
 
-customPropNameValue($blockKey, $modifierKey, $optionName)
-  {cpName($blockKey, $modifierKey, $optionName)} unquote(cpValue($blockKey, $modifierKey, $optionName))
+customPropNameValue($blockKey, $modifierKey, $optionName, $optionType = false, $optionState = '')
+  if($optionType == 'tag')
+    {cpName($blockKey, $modifierKey, $optionName)} cpValue($blockKey, $modifierKey, $optionName) + '' $optionState
+  else
+    {cpName($blockKey, $modifierKey, $optionName)} unquote(cpValue($blockKey, $modifierKey, $optionName))
 
 customPropAll($blockKey)
   for $modifierKey, $modifierConfig in $config[$blockKey].modifiers
     for $optionIndex, $optionConfig  in $modifierConfig.options
-      customPropNameValue($blockKey, $modifierKey, $optionConfig.name)
+      customPropNameValue($blockKey, $modifierKey, $optionConfig.name, $optionConfig.type, $optionConfig.state)
 
 className($blockKey, $elementKey = false, $modifierKey = false, $optionName = false)
   {getClassName($blockKey, $elementKey, $modifierKey, $optionName)}

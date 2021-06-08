@@ -1,5 +1,137 @@
 {
   "name": "Typography",
   "url": "/base/typography",
-  "pangram": "The quick brown fox jumps over a lazy dog"
+  "pangram": "The quick brown fox jumps over a lazy dog",
+  "font": {
+    "modifiers": {
+      "features": [
+        {
+          "value": "calt",
+          "examples": ["3x9"]
+        },
+        {
+          "value": "tnum",
+          "examples": ["11:31,711"]
+        },
+        {
+          "value": "frac",
+          "examples": ["test 18/29 fractions"]
+        },
+        {
+          "value": "case",
+          "examples": ["3 + 9 = 12 * 1", "SCHOOL @ RUN"]
+        },
+        {
+          "value": "ccmp",
+          "examples": ["Figure A⃝"]
+        },
+        {
+          "value": "dlig",
+          "examples": ["¡¿What?!"]
+        },
+        {
+          "value": "numr",
+          "examples": ["Hello 0123"]
+        },
+        {
+          "value": "dnom",
+          "examples": ["Hello 0123"]
+        },
+        {
+          "value": "sups",
+          "examples": ["X0123 (+)-[=]"]
+        },
+        {
+          "value": "subs",
+          "examples": ["X0123 (+)-[=]"]
+        },
+        {
+          "value": "ss01",
+          "examples": ["1234567890"]
+        },
+        {
+          "value": "ss02",
+          "examples": ["WP0ACO9XSI1012O9", "βeta ßeta Busineß"]
+        },
+        {
+          "value": "ss03",
+          "examples": ["Sara"]
+        },
+        {
+          "value": "ss04",
+          "examples": ["O0123"]
+        },
+        {
+          "value": "cv01",
+          "examples": ["1"]
+        },
+        {
+          "value": "cv02",
+          "examples": ["4"]
+        },
+        {
+          "value": "cv03",
+          "examples": ["6"]
+        },
+        {
+          "value": "cv04",
+          "examples": ["9"]
+        },
+        {
+          "value": "cv05",
+          "examples": ["l ł ƚ ɫ ɬ ŀ ĺ ļ ľ ḷ ḹ ḻ ḽ"]
+        },
+        {
+          "value": "cv06",
+          "examples": ["r ɽ ɍ ɼ ŕ ŗ ř ȑ ȓ ṙ ṛ ṝ ṟ"]
+        },
+        {
+          "value": "cv07",
+          "examples": ["ß"]
+        },
+        {
+          "value": "cv08",
+          "examples": ["I Ï Ḯ Ɨ Ḭ Ì Í Î Ĩ Ī Ĭ Į İ Ǐ Ȉ Ȋ Ỉ Ị Ι Ί Ϊ Ἰ Ἱ Ἲ"]
+        },
+        {
+          "value": "cv09",
+          "examples": ["3"]
+        },
+        {
+          "value": "cv10",
+          "examples": ["G Ǥ Ɠ Ĝ Ğ Ġ Ģ Ǧ Ǵ Ḡ"]
+        },
+        {
+          "value": "cv11",
+          "examples": [
+            "a á ă ắ ặ ằ ẳ ẵ ǎ â ấ ậ ầ ẩ ẫ ȁ ä ǟ ȧ ạ ǡ à ả ȃ ā ą ẚ å ǻ ḁ ã"
+          ]
+        },
+        {
+          "value": "locl",
+          "examples": ["3"]
+        },
+        {
+          "value": "salt",
+          "examples": ["3"]
+        },
+        {
+          "value": "aalt",
+          "examples": ["Aa"]
+        },
+        {
+          "value": "cpsp",
+          "examples": ["3"]
+        },
+        {
+          "value": "ordn",
+          "examples": ["3"]
+        },
+        {
+          "value": "zero",
+          "examples": ["zero 0"]
+        }
+      ]
+    }
+  }
 }

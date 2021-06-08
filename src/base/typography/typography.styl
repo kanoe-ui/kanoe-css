@@ -8,6 +8,8 @@ importFonts()
 [class*={className('font')}]
   customPropBaseNameValueAll('font')
   font-family: var(customPropBaseName('font', 'family'))
+  font-feature-settings var(customPropBaseName('font', 'features'))
+  // font-feature-settings unquote(joinCustomProps('font', 'features'))
   font-size var(customPropBaseName('font', 'size'))
   font-style var(customPropBaseName('font', 'style'))
   font-weight var(customPropBaseName('font', 'weight'))

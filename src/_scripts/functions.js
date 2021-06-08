@@ -78,6 +78,15 @@ const customPropName = (blockKey, modifierKey, optionName) => {
   ).name;
   return `--${blockName}${separators.customProperty}${modifierName}${separators.customProperty}${optionConfigName}`;
 };
+
+const joinCustomProps = (blockKey, modifierKey) => {
+  const modifierConfig = getModifierConfig(blockKey, modifierKey);
+  const result = modifierConfig.options.map((option) => {
+    return `var(${customPropName(blockKey, modifierKey, option.name)})`;
+  });
+  return result.join(', ');
+};
+
 const customPropValue = (blockKey, modifierKey, optionName) => {
   const separators = $config.separators;
   const blockName = getBlockConfig(blockKey).name;
@@ -129,8 +138,14 @@ exports.functions = {
 
 var plugin = function () {
   return (style) => {
-    externalFonts;
-    style.define('extFonts', (blockKey, modifierKey) => {
+    style.define('cpJoin', (blockKey, modifierKey) => {
+      return joinCustomProps(
+        blockKey.string,
+        modifierKey.string || modifierKey.name
+      );
+    });
+
+    style.define('extFonts', () => {
       return externalFonts();
     });
 
