@@ -17,7 +17,8 @@ html
     nav
       ul.list
         each item, key in locale
-          li
-            a(href=item.url)= item.name
+          if (item.url)
+            li
+              a(href=item.url)= item.name
     block content
       h1 #{ title }
