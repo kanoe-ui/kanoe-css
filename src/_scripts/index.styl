@@ -1,6 +1,8 @@
 $config = json('./token.json', { hash: true }, '$')
 use('functions.js')
 
+$ceilMultiplier = s('4.9406564584124654e-324', '')
+
 joinCustomProps($blockKey, $modifierKey)
   cpJoin($blockKey, $modifierKey)
 

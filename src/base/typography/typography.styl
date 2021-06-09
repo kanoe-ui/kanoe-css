@@ -3,16 +3,19 @@
 importFonts()
 
 :root
+  --ceilMultiplier $ceilMultiplier
+  --gridBaseValue $config.grid.baseValue
   customPropAll('font')
 
 [class*={className('font')}]
+  --line-height calc(((((var(--font-size) / var(--gridBaseValue)) + 1px) * var(--ceilMultiplier) / var(--ceilMultiplier)) * var(--gridBaseValue)))
   customPropBaseNameValueAll('font')
-  font-family: var(customPropBaseName('font', 'family'))
+  font-family var(customPropBaseName('font', 'family'))
   font-feature-settings var(customPropBaseName('font', 'features'))
-  // font-feature-settings unquote(joinCustomProps('font', 'features'))
   font-size var(customPropBaseName('font', 'size'))
   font-style var(customPropBaseName('font', 'style'))
   font-weight var(customPropBaseName('font', 'weight'))
+  line-height var(--line-height)
 
 {''}
   classNameModifierAll('font')
