@@ -1,0 +1,11 @@
+extends ../../_layout.pug
+
+block head
+
+block content
+  - var $t = locale.content;
+  - var $fn = locals.fn;
+
+  h1= $t.name
+
+  - var $block = config.content;

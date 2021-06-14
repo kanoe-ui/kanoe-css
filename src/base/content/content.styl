@@ -1,0 +1,36 @@
+@import ('_scripts/index.styl')
+
+ul, h1, h2, table, tr, td, th, pre
+  margin 0
+  padding 0
+
+.{$config.list.name}
+  --font-size var(--font-size-default)
+  --line-height var(--line-height-default)
+  font-size var(--font-size)
+  // line-height var(--line-height)
+  // margin var(--grid-base) 0
+  // padding 0 0 0 calc(var(--grid-base) * 3)
+  margin 0
+  outline 1px solid red
+  padding 0
+
+    &::marker
+      color red
+      font-size var(--font-size-default)
+      width 16px
+
+// [class*='title']
+//   --font-size var(--font-size-default)
+//   --line-height var(--line-height-default)
+//   font-size var(--font-size)
+//   line-height var(--line-height)
+//   margin 0 0 var(--line-height)
+
+// .title
+//   &--h1
+//     --font-size var(--font-size-large)
+//     --line-height var(--line-height-large)
+//   &--h2
+//     --font-size var(--font-size-default)
+//     --line-height var(--line-height-default)
