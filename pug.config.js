@@ -1,9 +1,9 @@
-const config = require('./_scripts/token.json');
+const config = require('./src/_scripts/token.json');
 
-const localeGeneral = require('./locale-general.json');
-const localeHome = require('./locale.json');
-const localeContent = require('./base/content/locale.json');
-const localeTypography = require('./base/typography/locale.json');
+const localeGeneral = require('./src/locale-general.json');
+const localeHome = require('./src/locale.json');
+const localeContent = require('./src/base/content/locale.json');
+const localeTypography = require('./src/base/typography/locale.json');
 
 const className = (blockName, elementName, modifierName, optionName) => {
   let result = blockName;
