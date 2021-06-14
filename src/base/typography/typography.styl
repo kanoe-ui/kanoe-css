@@ -8,7 +8,7 @@ importFonts()
   customPropAll('font')
 
 [class*={className('font')}]
-  --line-height calc(((((var(--font-size) / var(--gridBaseValue)) + 1px) * var(--ceilMultiplier) / var(--ceilMultiplier)) * var(--gridBaseValue)))
+  --line-height calc(((var(--font-size) + 1rem) * var(--ceilMultiplier)) / var(--ceilMultiplier))
   customPropBaseNameValueAll('font')
   font-family var(customPropBaseName('font', 'family'))
   font-feature-settings var(customPropBaseName('font', 'features'))
