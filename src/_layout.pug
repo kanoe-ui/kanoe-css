@@ -13,12 +13,13 @@ html
       rel="stylesheet"
     )
 
-  body.doc_grid_bg.doc_hover
+  body.doc_grid_bg.doc_hover.content
     nav
       ul(class=config.list.name)
         each item, key in locale
           if (item.url)
             li
               a(href=item.url)= item.name
-    block content
-      h1 #{ title }
+    main
+      block content
+        h1 #{ title }
